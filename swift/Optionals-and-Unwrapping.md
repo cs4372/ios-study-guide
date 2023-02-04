@@ -85,3 +85,8 @@ var text: String?
     guard let value = text else { return }
     print(value)
 ```
+
+References:
+- https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html
+- https://github.com/jrasmusson/ios-starter-kit/blob/master/swift/Optionals.md
+- https://www.swiftanytime.com/optionals-and-unwrapping-in-swift/ 
