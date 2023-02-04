@@ -77,11 +77,11 @@ if let x {
 ```
 var text: String?
    text = "hello world"
-		
-		if let value = text { 
-				print(value
-		}
+   if let value = text { 
+       print(value
+	}
 
-		guard let value = text else { return }
-		print(value)
+    //using guard let
+    guard let value = text else { return }
+    print(value)
 ```
