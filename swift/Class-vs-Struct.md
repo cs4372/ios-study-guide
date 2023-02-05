@@ -1,3 +1,5 @@
+## Classes vs Structs
+
 Classes and structs are the fundamental building blocks of Swift and we can use them to store data and model behavior. 
 
 ### They have many things in common:

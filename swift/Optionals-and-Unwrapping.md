@@ -1,4 +1,4 @@
-#### Optionals and Unwrapping
+## Optionals and Unwrapping
 
 ## What is an optional?
 

@@ -1,4 +1,4 @@
-#### Error Handling
+## Error Handling
 
 - process of responding to error conditions in your program
 
