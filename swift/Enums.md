@@ -190,3 +190,7 @@ Weekday.Monday.dayType
 Weekday.Sunday.dayType
 // this will return "Weekend"
 ```
+
+Resources:
+- https://blog.logrocket.com/swift-enums-an-overview-with-examples/#caseiterable-in-enumeration-cases
+- https://docs.swift.org/swift-book/LanguageGuide/Enumerations.html
