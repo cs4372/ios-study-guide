@@ -118,6 +118,7 @@ fan.rotates
 
 
 References:
+
 - https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html
 - https://developer.apple.com/documentation/swift/choosing-between-structures-and-classes
 - https://developer.apple.com/documentation/swift/choosing-between-structures-and-classes

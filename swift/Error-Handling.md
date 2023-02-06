@@ -64,7 +64,6 @@ If the method of initializer throws an error, the result will be nil.
 ```
 let file = try? readFiles(path: project/example”)
 let file1 = try? readFiles(name: nil) // nil (file1 is an optional which can handle nil)
-
 ```
 
 - try! It returns a normal type. If the method/init throws an error, it will crash. Because the returned type will be nil and a normal type cannot handle nil.
@@ -72,6 +71,6 @@ let file1 = try? readFiles(name: nil) // nil (file1 is an optional which can han
 Avoid using! in most cases since it will break your program.
 
 References:
-1. https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html
-2. https://www.programiz.com/swift-programming/error-handling
-3. https://abhimuralidharan.medium.com/error-handling-in-swift-d0a618499910
+- https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html
+- https://www.programiz.com/swift-programming/error-handling
+- https://abhimuralidharan.medium.com/error-handling-in-swift-d0a618499910

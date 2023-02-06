@@ -76,17 +76,18 @@ if let x {
 
 ```
 var text: String?
-   text = "hello world"
-   if let value = text { 
-       print(value
-	}
-
-    //using guard let
-    guard let value = text else { return }
+text = "hello world"
+if let value = text { 
     print(value)
+}
+
+//using guard let
+guard let value = text else { return }
+print(value)
 ```
 
 References:
+
 - https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html
 - https://github.com/jrasmusson/ios-starter-kit/blob/master/swift/Optionals.md
 - https://www.swiftanytime.com/optionals-and-unwrapping-in-swift/ 

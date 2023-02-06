@@ -4,7 +4,6 @@ Timer is used for scheduling tasks after a specific time interval.
 
 #### Scheduling a repeating task
 ```
-
 private var timer: Timer?
 
 override func viewDidLoad() {

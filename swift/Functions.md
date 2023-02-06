@@ -73,4 +73,5 @@ arithmeticMean(3, 8.25, 18.75)
 ```
 
 Resources:
-https://docs.swift.org/swift-book/LanguageGuide/Functions.html
+
+- https://docs.swift.org/swift-book/LanguageGuide/Functions.html
