@@ -124,6 +124,7 @@ enum Fruit: String {
 ```
 
 Create a function that will return the rawValue of the fruits
+```
 func guessFruit(fruitName: Fruit) -> String {
     return fruitName.rawValue
 } 
