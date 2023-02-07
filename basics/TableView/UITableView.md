@@ -2,12 +2,17 @@
 
 ### Steps
 1. Open Main.storyboard and drag in a new Table View from the Object Library: 
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/TableView/Images/table-view1.png" height="300"/>
 
 2. Set top, leading, bottom and trailing contraints to 0
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/TableView/Images/table-view2.png" height="300"/>
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/TableView/Images/table-view5.png" height="300"/>
 
 3. Select the Table View, configure Dynamic Prototypes for Content, set Prototype Cells to 1 and select Plain as Style
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/TableView/Images/table-view3.png" height="100"/>
 
 4. Select the Prototype cell and configure tableCell as Identifier. 
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/TableView/Images/table-view4.png" height="100"/>
 
 5. Click on Table view and create an IBOutlet called HotelTableView by dragging it to ViewController.swift
 
