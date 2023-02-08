@@ -13,6 +13,9 @@
 		474E607329920E14007B4F24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474E607129920E14007B4F24 /* Main.storyboard */; };
 		474E607529920E17007B4F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 474E607429920E17007B4F24 /* Assets.xcassets */; };
 		474E607829920E17007B4F24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474E607629920E17007B4F24 /* LaunchScreen.storyboard */; };
+		474E608029935623007B4F24 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474E607F29935622007B4F24 /* TableViewCell.swift */; };
+		474E60822993566A007B4F24 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474E60812993566A007B4F24 /* Hotel.swift */; };
+		474E60842993612B007B4F24 /* TableViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474E60832993612B007B4F24 /* TableViewDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		474E607429920E17007B4F24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		474E607729920E17007B4F24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		474E607929920E17007B4F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		474E607F29935622007B4F24 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		474E60812993566A007B4F24 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		474E60832993612B007B4F24 /* TableViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +62,12 @@
 		474E606A29920E14007B4F24 /* table-view */ = {
 			isa = PBXGroup;
 			children = (
+				474E60812993566A007B4F24 /* Hotel.swift */,
 				474E606B29920E14007B4F24 /* AppDelegate.swift */,
 				474E606D29920E14007B4F24 /* SceneDelegate.swift */,
 				474E606F29920E14007B4F24 /* ViewController.swift */,
+				474E607F29935622007B4F24 /* TableViewCell.swift */,
+				474E60832993612B007B4F24 /* TableViewDetail.swift */,
 				474E607129920E14007B4F24 /* Main.storyboard */,
 				474E607429920E17007B4F24 /* Assets.xcassets */,
 				474E607629920E17007B4F24 /* LaunchScreen.storyboard */,
@@ -138,8 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474E60822993566A007B4F24 /* Hotel.swift in Sources */,
 				474E607029920E14007B4F24 /* ViewController.swift in Sources */,
+				474E608029935623007B4F24 /* TableViewCell.swift in Sources */,
 				474E606C29920E14007B4F24 /* AppDelegate.swift in Sources */,
+				474E60842993612B007B4F24 /* TableViewDetail.swift in Sources */,
 				474E606E29920E14007B4F24 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
