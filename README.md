@@ -7,6 +7,7 @@ Study guide on iOS and Swift
 * [Collection Types](https://github.com/cs4372/ios-study-guide/blob/master/swift/Collection-Types.md)
 * [Var vs Const](https://github.com/cs4372/ios-study-guide/blob/master/swift/Var-vs-const.md)
 * [Control Flow](https://github.com/cs4372/ios-study-guide/blob/master/swift/Control-Flow.md)
+* [Closure](https://github.com/cs4372/ios-study-guide/blob/master/swift/Closure.md)
 * [Enums](https://github.com/cs4372/ios-study-guide/blob/master/swift/Enums.md)
 * [Error Handling](https://github.com/cs4372/ios-study-guide/blob/master/swift/Error-Handling.md)
 * [Functions](https://github.com/cs4372/ios-study-guide/blob/master/swift/Functions.md)
