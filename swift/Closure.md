@@ -20,7 +20,6 @@ If the closure doesn't return any value, you can omit the arrow and return type
 { (parameters) in
 statements
 }
-
 ```
 
 #### Examples:
