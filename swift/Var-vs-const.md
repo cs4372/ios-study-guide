@@ -8,7 +8,6 @@ var age = 15
 print(age) // 15
 age = 20 
 print(age) // 20
-
 ```
 
 ### const 
@@ -30,5 +29,5 @@ var carOneMiles = defaultMiles  // 50
 var carTwoMiles = defaultMiles  // 50
 
 carOneMiles = 300
-print(carOneMiles) // 200
+print(carOneMiles) // 300
 ```
