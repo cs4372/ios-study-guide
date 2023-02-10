@@ -130,4 +130,6 @@ The value is stored once `didSet` is executed
 - Constant properties must always have a value before the initialization completes, and therefore can’t be declared lazy.
 
 Resources:
+- https://docs.swift.org/swift-book/LanguageGuide/Properties.html
 - https://www.programiz.com/swift-programming/properties
+- https://www.tutorialspoint.com/lazy-stored-procedure-in-swift
