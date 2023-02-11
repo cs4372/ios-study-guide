@@ -154,7 +154,18 @@ ViewController
 - special relationship with the segue so it will be embedded inside of the view controller and push it onto the screen when transition to another view controller, Hence the back button in the another view controller
 
 1. Click on the first View Controller. Click Editor at the top of the file, Embed in and Navigation Controller. It will now be the initial View Controller.
-2. 
+
+## Tab Controller
+
+1. Click on the Navigation Controller. Click Editor at the top of the file, Embed in and Tab Controller.
+2. Create a new controller and right click Tab View Controller and drag it to the new controller. Select view controllers under Relationship segue
+
+
+see code ^
+
+Resources: 
+
+UIViewControllers in ios and swift:  https://www.youtube.com/watch?v=WuSesaZcaMQ
 
 
 
