@@ -19,4 +19,6 @@ Study guide on iOS and Swift
 ## Basics
 * [Timer](https://github.com/cs4372/ios-study-guide/blob/master/basics/Timer.md)
 * [UITableView](https://github.com/cs4372/ios-study-guide/blob/master/basics/TableView/UITableView.md)
+* [UIViewController](https://github.com/cs4372/ios-study-guide/blob/master/basics/UIViewController/UIViewController.md)
+* [Coder](https://github.com/cs4372/ios-study-guide/blob/master/basics/Codable.md)
 
