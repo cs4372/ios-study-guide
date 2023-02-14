@@ -2,6 +2,7 @@
 
 - allows you to lay out /customize items however you want
 - layouts in grids instead of rows like a table view
+- has a UICollectionViewLayout object, so you can customize the layout of the collection view
 - setup is very similar to UITableView
   
 Steps:
@@ -27,10 +28,17 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.backgroundColor = UIColor.systemPurple
+        cell.label.text = String(indexPath.item)
         return cell
     }
 }
-
 ```
+
+** Use `indexPath.item` in CollectionView and `indexPath.row` in TableView. The values are the same either way.
+
+### Layout using UICollectionViewCompositionalLayout
+
+1. Create a reference to the Collection View from the View Controller 
+2. assign collectionView.collectionViewLayout to a UICollectionViewCompositionalLayout object
