@@ -36,9 +36,13 @@ extension ViewController: UICollectionViewDataSource {
 }
 ```
 
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/UICollectionView/UICollectionView.png" height="300"/>
+
 ** Use `indexPath.item` in CollectionView and `indexPath.row` in TableView. The values are the same either way.
 
 ### Layout using UICollectionViewCompositionalLayout
+
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/UICollectionView/UICollectionViewCompositionalLayout.png" height="300">
 
 1. Create a reference to the Collection View from the View Controller 
 2. assign collectionView.collectionViewLayout to a UICollectionViewCompositionalLayout object
