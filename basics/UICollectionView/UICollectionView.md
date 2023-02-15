@@ -46,3 +46,7 @@ extension ViewController: UICollectionViewDataSource {
 
 1. Create a reference to the Collection View from the View Controller 
 2. assign collectionView.collectionViewLayout to a UICollectionViewCompositionalLayout object
+
+
+Resources:
+- https://www.youtube.com/watch?v=cWfG79NaOv4&list=PL0X6fGhFFNTdrYtZQQ5_-5RZ-EhS76-ZK&index=14 
