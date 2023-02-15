@@ -20,6 +20,7 @@ Study guide on iOS and Swift
 
 ## Basics
 * [Timer](https://github.com/cs4372/ios-study-guide/blob/master/basics/Timer.md)
+* [NavigationBar](https://github.com/cs4372/ios-study-guide/blob/master/basics/NavigationBar/NavigationBar.md)
 * [UIControls](https://github.com/cs4372/ios-study-guide/blob/master/basics/UIControls/UIControls.md)
 * [UICollectionView](https://github.com/cs4372/ios-study-guide/blob/master/basics/UICollectionView/UICollectionView.md)
 * [UITableView](https://github.com/cs4372/ios-study-guide/blob/master/basics/TableView/UITableView.md)
