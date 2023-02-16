@@ -6,8 +6,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        // so that keyboard opens up if user touches text field
+        /**
+        so View Controller has the power that it needs over the text 
+        field to resign the first responder and shuts down keyboard
+        */
         textField.delegate = self
     }
     
