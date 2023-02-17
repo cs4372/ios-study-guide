@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         
         // Get data from the web
         if let url = URL(string: "https://www.google.com") {
-             URLSession.shared.dataTask(with: url) {
+            URLSession.shared.dataTask(with: url) {
                 data, response, error in
                 guard let data = data else { return }
                 print(String(data: data, encoding: .utf8)!)
@@ -29,6 +29,6 @@ class ViewController: UIViewController {
                     //Update UI
                 })
             }
+        }
     }
 }
-
