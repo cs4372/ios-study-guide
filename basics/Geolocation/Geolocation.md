@@ -60,12 +60,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // to allow View Controller to control the location manager and handle the requested user location
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
 
-        // Get Real-Time User Location Updates
         locationManager.startUpdatingLocation()
     }
     
@@ -102,6 +100,39 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 
 ```
 
+#### Find user's physical location using latitude and longitude
+- We hand the CLGeocoder class a set of coordinates, latitude and longitude, and ask it for the corresponding address, a physical location that has meaning to the user. 
+
+```
+CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+    var result = ""
+    if let error = error {
+        print("Unable to Reverse Geocode Location (\(error))")
+        self.addressContent.text = "Unable to Find Address for Location"
+    } else {
+        if let placemarks = placemarks, let placemark = placemarks.first {
+            if let name = placemark.name {
+                result+=name
+            }
+            
+            if let locality = placemark.locality {
+                result+=", \(locality)"
+            }
+            if let administrativeArea = placemark.administrativeArea {
+                result+=", \(administrativeArea)"
+            }
+            if let postalCode = placemark.postalCode {
+                result+=", \(postalCode)"
+            }
+            self.addressContent.text = result
+        }
+    }
+}
+
+```
+
+
 Resources:
 - https://www.abstractapi.com/guides/swift-geolocation
 - https://www.advancedswift.com/user-location-in-swift/#get-a-user-s-location-once
+- https://cocoacasts.com/reverse-geocoding-with-clgeocoder

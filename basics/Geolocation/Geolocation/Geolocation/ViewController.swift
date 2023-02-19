@@ -11,9 +11,15 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
-
+    
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var addressContent: UILabel!
+    @IBOutlet weak var latLabel: UILabel!
+    @IBOutlet weak var longLabel: UILabel!
+    @IBOutlet weak var courseLabel: UILabel!
+    @IBOutlet weak var altLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,25 +32,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            let latitude = location.coordinate.latitude
-            let longitude = location.coordinate.longitude
-            
-            let latDelta: CLLocationDegrees = 0.01
-            let lonDelta: CLLocationDegrees = 0.01
-            
-            let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
-            
-            // The latitude and longitude associated with a location
-            let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            
-            let region: MKCoordinateRegion = MKCoordinateRegion(center: coordinates, span: span)
-            mapView.setRegion(region, animated: true)
-            
-            let annotation = MKPointAnnotation()
-            annotation.title = "You are located in this area"
-            annotation.coordinate = coordinates
-            mapView.addAnnotation(annotation)
-            mapView.showsUserLocation = true
+            latLabel.text = String(location.coordinate.latitude)
+            longLabel.text = String(location.coordinate.longitude)
+            courseLabel.text = String(location.course)
+            speedLabel.text = String(location.speed)
+            altLabel.text = String(location.altitude)
+
+            CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+                var result = ""
+                if let error = error {
+                    print("Unable to Reverse Geocode Location (\(error))")
+                    self.addressContent.text = "Unable to Find Address for Location"
+                } else {
+                    if let placemarks = placemarks, let placemark = placemarks.first {
+                        if let name = placemark.name {
+                            result+=name
+                        }
+                        
+                        if let locality = placemark.locality {
+                            result+=", \(locality)"
+                        }
+                        if let administrativeArea = placemark.administrativeArea {
+                            result+=", \(administrativeArea)"
+                        }
+                        if let postalCode = placemark.postalCode {
+                            result+=", \(postalCode)"
+                        }
+                        self.addressContent.text = result
+                    }
+                }
+            }
         }
     }
 }
