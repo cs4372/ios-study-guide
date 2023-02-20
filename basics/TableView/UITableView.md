@@ -60,8 +60,18 @@ We are conforming the protocols (UITableViewDelegate, UITableViewDataSource) in 
 
 <img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/TableView/Images/table-view11.png" />
 
-** A segue defines a transition between two view controllers in your app’s storyboard file. 
+** A segue defines a transition between two view controllers in your app’s storyboard file.
 
+### How to swipe to delete UITableViewCells
+
+```
+override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+        objects.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    } ...
+}
+```
 ## Code:
 
 ## View Controller
