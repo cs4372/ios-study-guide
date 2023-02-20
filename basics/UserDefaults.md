@@ -38,5 +38,8 @@ When to use User Defaults?
 - if you need to store small amounts of data that don't need to be secured
 -  do not store sensitive information such as username / user token
 
+References:
+- https://github.com/cs4372/ios-projects/tree/master/Todo-List/Todo-List
+
 Resources:
 - https://cocoacasts.com/ud-1-how-to-use-user-defaults-in-swift
