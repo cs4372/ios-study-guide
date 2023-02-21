@@ -9,6 +9,7 @@ Study guide on iOS and Swift
 * [Control Flow](https://github.com/cs4372/ios-study-guide/blob/master/swift/Control-Flow.md)
 * [Enums](https://github.com/cs4372/ios-study-guide/blob/master/swift/Enums.md)
 * [Error Handling](https://github.com/cs4372/ios-study-guide/blob/master/swift/Error-Handling.md)
+* [Extensions](https://github.com/cs4372/ios-study-guide/blob/master/swift/Extensions.md)
 * [Functions](https://github.com/cs4372/ios-study-guide/blob/master/swift/Functions.md)
 * [Inheritance](https://github.com/cs4372/ios-study-guide/blob/master/swift/Inheritance.md)
 * [Methods](https://github.com/cs4372/ios-study-guide/blob/master/swift/Methods.md)
