@@ -17,6 +17,7 @@ Study guide on iOS and Swift
 * [Optional Chaining](https://github.com/cs4372/ios-study-guide/blob/master/swift/Optional-Chaining.md)
 * [Optionals and Unwrapping](https://github.com/cs4372/ios-study-guide/blob/master/swift/Optionals-and-Unwrapping.md)
 * [Properties](https://github.com/cs4372/ios-study-guide/blob/master/swift/Properties.md)
+* [Protocols](https://github.com/cs4372/ios-study-guide/blob/master/swift/Protocols.md)
 * [Strings](https://github.com/cs4372/ios-study-guide/blob/master/swift/Strings.md)
 * [Type Casting](https://github.com/cs4372/ios-study-guide/blob/master/swift/Type-Casting.md)
 * [Type Safety and Type Inference](https://github.com/cs4372/ios-study-guide/blob/master/swift/Type-Safety-and-Inference.md)
