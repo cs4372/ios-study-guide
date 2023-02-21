@@ -7,6 +7,7 @@ Study guide on iOS and Swift
 * [Closure](https://github.com/cs4372/ios-study-guide/blob/master/swift/Closure.md)
 * [Collection Types](https://github.com/cs4372/ios-study-guide/blob/master/swift/Collection-Types.md)
 * [Control Flow](https://github.com/cs4372/ios-study-guide/blob/master/swift/Control-Flow.md)
+* [Delegation](https://github.com/cs4372/ios-study-guide/blob/master/swift/Delegation/Delegation.md)
 * [Enums](https://github.com/cs4372/ios-study-guide/blob/master/swift/Enums.md)
 * [Error Handling](https://github.com/cs4372/ios-study-guide/blob/master/swift/Error-Handling.md)
 * [Extensions](https://github.com/cs4372/ios-study-guide/blob/master/swift/Extensions.md)
