@@ -61,6 +61,8 @@ from https://www.youtube.com/watch?v=VcoZJ88d-vM (Retain Cycle, Automatic Refere
 
 <img src="https://github.com/cs4372/ios-study-guide/blob/master/swift/Automatic-Reference-Count/arc-diagram.png"/>
 
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/swift/Automatic-Reference-Count/arc-weak.png"/>
+
 Resources:
 - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting
 - https://developer.apple.com/videos/play/wwdc2021/10216/
