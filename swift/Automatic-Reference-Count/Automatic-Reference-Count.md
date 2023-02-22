@@ -40,8 +40,9 @@ We construct an example of class Person named cat and provide all of the class�
 - When an instance of the Person class is deallocated, it has a deinitializer that outputs a message for the deallocation operation.
 - ARC memory management does not deallocate any objects with strong references. Next, we nil the reference to the object cat, which deallocates the object it was referencing; this is how the deinit() function of the class Person is called before it deallocates the object.
 
-### Reference cycles
-- occur when two strong variables point to each other. This causes the instances of both of these variables to remain alive even though they ideally shouldn’t
+### Reference/Retain cycles
+- occur when there are two strong references pointing to each other This causes the instances of both of these variables to remain alive even though they ideally shouldn’t
+- Setting one of them to weak will allow ARC to get to zero.
 - There are three types of reference cycles in ARC; strong, weak, and unowned references
 
 ### Strong Reference Cycle 
@@ -61,7 +62,16 @@ from https://www.youtube.com/watch?v=VcoZJ88d-vM (Retain Cycle, Automatic Refere
 
 <img src="https://github.com/cs4372/ios-study-guide/blob/master/swift/Automatic-Reference-Count/arc-diagram.png"/>
 
+^ Prior to setting a weak reference to the owner property inside MacBook Class, Sean has a reference to himself and Mathilda has a reference to herself.
+Strong references from both of them pointing to each other. This is bad since it's a retain cycle.
+
+If we ONLY have `sean = nil`, Mathilda will still point to sean and sean will not be removed from memory. It can only be removed from memory
+if ARC is equal to 0.
+
 <img src="https://github.com/cs4372/ios-study-guide/blob/master/swift/Automatic-Reference-Count/arc-weak.png"/>
+
+If we make the owner variable weak, there will be no strong reference pointing to Sean. So, if we make `sean = nil`, then he can be removed from memory
+because matilda is not holding on to him anymore. This clears the retain cycle.
 
 Resources:
 - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting
