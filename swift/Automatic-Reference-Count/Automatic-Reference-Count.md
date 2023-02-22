@@ -54,6 +54,13 @@ We construct an example of class Person named cat and provide all of the classâ€
 ### Weak references cycles
 - does not maintain a strong hold on the object it refers to.
 
+### Example
+from https://www.youtube.com/watch?v=VcoZJ88d-vM (Retain Cycle, Automatic Reference Counting, Memory Leak)
+
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/swift/Automatic-Reference-Count/arc-code.png"/>
+
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/swift/Automatic-Reference-Count/arc-diagram.png"/>
+
 Resources:
 - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting
 - https://developer.apple.com/videos/play/wwdc2021/10216/
