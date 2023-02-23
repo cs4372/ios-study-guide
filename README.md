@@ -24,6 +24,7 @@ Study guide on iOS and Swift
 * [Var vs Const](https://github.com/cs4372/ios-study-guide/blob/master/swift/Var-vs-const.md)
 
 ## Basics
+* [Audio](https://github.com/cs4372/ios-study-guide/blob/master/basics/Audio/Audio.md)
 * [Auto Layout](https://github.com/cs4372/ios-study-guide/blob/master/basics/AutoLayout/AutoLayout.md)
 * [Geoloation](https://github.com/cs4372/ios-study-guide/blob/master/basics/Geolocation/Geolocation.md)
 * [Keyboard](https://github.com/cs4372/ios-study-guide/blob/master/basics/Keyboard/Keyboard.md)
