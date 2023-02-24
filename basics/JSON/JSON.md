@@ -214,3 +214,7 @@ struct Loan: Hashable, Codable {
     }
 }
 ```
+
+Resources:
+- https://medium.com/swlh/how-to-work-with-json-in-swift-83cd93a837e
+- https://www.appcoda.com/json-codable-swift/
