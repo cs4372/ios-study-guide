@@ -13,6 +13,7 @@ Study guide on iOS and Swift
 * [Extensions](https://github.com/cs4372/ios-study-guide/blob/master/swift/Extensions.md)
 * [Functions](https://github.com/cs4372/ios-study-guide/blob/master/swift/Functions.md)
 * [Inheritance](https://github.com/cs4372/ios-study-guide/blob/master/swift/Inheritance.md)
+* [Initialization](https://github.com/cs4372/ios-study-guide/blob/master/swift/Initialization.md)
 * [Methods](https://github.com/cs4372/ios-study-guide/blob/master/swift/Methods.md)
 * [Optional Chaining](https://github.com/cs4372/ios-study-guide/blob/master/swift/Optional-Chaining.md)
 * [Optionals and Unwrapping](https://github.com/cs4372/ios-study-guide/blob/master/swift/Optionals-and-Unwrapping.md)
