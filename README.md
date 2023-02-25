@@ -27,6 +27,7 @@ Study guide on iOS and Swift
 ## Basics
 * [Audio](https://github.com/cs4372/ios-study-guide/blob/master/basics/Audio/Audio.md)
 * [Auto Layout](https://github.com/cs4372/ios-study-guide/blob/master/basics/AutoLayout/AutoLayout.md)
+* [Core Data](https://github.com/cs4372/ios-study-guide/blob/master/basics/CoreData/CoreData.md)
 * [Geoloation](https://github.com/cs4372/ios-study-guide/blob/master/basics/Geolocation/Geolocation.md)
 * [JSON](https://github.com/cs4372/ios-study-guide/blob/master/basics/JSON/JSON.md)
 * [Keyboard](https://github.com/cs4372/ios-study-guide/blob/master/basics/Keyboard/Keyboard.md)
