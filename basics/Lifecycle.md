@@ -7,10 +7,10 @@ viewDidLoad()
 - outlets are guaranteed to have a value
 
 viewWillAppear()
-- Called just before content view is added to app's view hierachy, just before it shows up on the screen
-- Gets called `every time` when it comes on screen
+- Called right before your view appears 
+- Good for hiding/showing fields or any operations that you want to happen `every time` before the view is visible. Because you might be going back and forth between views, this will be called `every time` your view is about to appear on the screen.
 - e.g. in a navigation controller, everytime you go back to the first screen, viewWillAppear will get called
-Usage: set text in text field to empty string
+- set text in text field to empty string
 
 viewDidAppear()
 - Called after the content view is added to app's view hierachy
