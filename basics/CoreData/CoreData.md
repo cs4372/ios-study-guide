@@ -106,9 +106,17 @@ func deleteData() {
         let person = try viewContext.fetch(fetchRequest)
         let result = person[0]
         viewContext.delete(result)
+        try viewContext.save()
     } catch let error {
         print("Failed to delete: \(error)")
     }
+    
+      do {
+        try viewContext.save()
+            print("saved")
+        } catch let error as NSError {
+            print("Could not save \(error)")
+        }
 }
 ```
 
