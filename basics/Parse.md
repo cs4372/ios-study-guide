@@ -50,4 +50,49 @@ Note: If you have to delete the podfile and restart the procee again: Run `pod d
 ```
 3. Setup instructions: https://www.back4app.com/docs/get-started/parse-sdk 
 
+### Save Objects
+https://docs.parseplatform.org/ios/guide/#saving-objects
+```
+let tweet = PFObject(className:"Twitter")
+tweet["id"] = 1
+tweet["content"] = "This is a tweet"
+tweet["displayLocation"] = true
+tweet.saveInBackground { (succeeded, error)  in
+    if (succeeded) {
+        // The object has been saved.
+    } else {
+        // There was a problem, check error.description
+    }
+}
+```
 
+### Retrieving Objects (get id from Parse dashboard)
+https://docs.parseplatform.org/ios/guide/#retrieving-objects
+```
+let query = PFQuery(className:"Twitter")
+query.getObjectInBackground(withId: {id}) { (tweet, error) in
+    if error == nil {
+        // Success!
+        if let tweet = tweet { 
+            print(tweetObj)
+        }
+    } else {
+        // Fail!
+    }
+}
+```
+
+### Updating Objects
+https://docs.parseplatform.org/ios/guide/#updating-objects
+```
+let tweet = PFQuery(className:"Twitter")
+query.getObjectInBackground(withId: {id}) { (tweet: PFObject?, error: Error?) in
+    if let error = error {
+        print(error.localizedDescription)
+    } else if let tweet = tweet {
+        tweet["content"] = "Updated Content"
+        tweet["displayLocation"] = false
+        tweet.saveInBackground()
+    }
+}
+```
