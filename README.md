@@ -32,6 +32,7 @@ Study guide on iOS and Swift
 * [JSON](https://github.com/cs4372/ios-study-guide/blob/master/basics/JSON/JSON.md)
 * [Keyboard](https://github.com/cs4372/ios-study-guide/blob/master/basics/Keyboard/Keyboard.md)
 * [Maps](https://github.com/cs4372/ios-study-guide/blob/master/basics/Maps/Maps.md)
+* [Parse](https://github.com/cs4372/ios-study-guide/blob/master/basics/Parse.md)
 * [Segues](https://github.com/cs4372/ios-study-guide/blob/master/basics/Segues/Segues.md)
 * [TableView](https://github.com/cs4372/ios-study-guide/blob/master/basics/TableView/UITableView.md)
 * [UICollectionView](https://github.com/cs4372/ios-study-guide/blob/master/basics/UICollectionView/UICollectionView.md)
