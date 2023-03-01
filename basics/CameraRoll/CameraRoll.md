@@ -1,6 +1,6 @@
 ## How to access Camera Roll 
 
-Add a new roll in Info.plist and add key "Privacy - Photo library Usage Description" and value.
+Add a new row in Info.plist and add key "Privacy - Photo library Usage Description" and value.
 
 ```
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
