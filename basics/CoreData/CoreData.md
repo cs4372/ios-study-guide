@@ -120,6 +120,9 @@ func deleteData() {
 }
 ```
 
+### Core Data Codegen 
+[Manual/None vs Class Definition vs Category/Extension](https://leekahseng.medium.com/core-data-codegen-explained-462c30341041])
+
 Resources:
 - https://medium.com/@ankurvekariya/core-data-crud-with-swift-4-2-for-beginners-40efe4e7d1cc
 - https://www.youtube.com/watch?v=ZwBIBzs3tuc&t=363s 
