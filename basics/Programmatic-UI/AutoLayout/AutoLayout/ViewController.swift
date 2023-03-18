@@ -8,16 +8,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private let button: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Button", for: .normal)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let button = UIButton()
-        button.backgroundColor = .systemBlue
-        button.setTitle("Button", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -31,6 +35,7 @@ class ViewController: UIViewController {
     
     @objc func clickButton() {
         let vc = SecondViewController()
+//        self.present(vc, animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
