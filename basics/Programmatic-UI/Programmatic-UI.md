@@ -6,6 +6,8 @@ Auto Layout constraints allow us to create views that dynamically adjust to diff
 1. Remove Storyboard 
 2. Click on the Project, in this case, AutoLayout. Go to info, under Custom iOS Target Properties, remove `Main storyboard file base name` and `Storyboard name` under Scene Configuration
 
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/Programmatic-UI/programmatic-ui.png"/>
+
 #### Lay out a user interface
 
 1. Frame (Less preferred)
@@ -16,7 +18,7 @@ self.view.addSubview(button)
 button.frame = CGRect(x: 100, y: 100, width: 120, height: 44)
 ````
 
-1. Programmatic Auto Layout
+2. Programmatic Auto Layout
 
 
 #### Writing constraints by using Layout Anchors
@@ -58,8 +60,7 @@ override func viewDidLoad() {
 }
 ```
 
-Scene Delegate
-Inside scene, 
+Inside scene in Scene Delegate
 ```
 func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -71,7 +72,7 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
 ```
 
 #### Presents a view controller modally
-Similar to above, but update in ViewController
+Similar to above, but update clickButton function in ViewController
 ```
 @objc func clickButton() {
     let vc = SecondViewController()
