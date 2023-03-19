@@ -46,6 +46,8 @@ extension ViewController: UICollectionViewDataSource {
 - Compositional layout lets you construct views by combining different components: sections, groups, and items. 
 - A section represents the outer container view that surrounds a group of items.
 
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/UICollectionView/compositional_layout.png" />
+
 <img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/UICollectionView/UICollectionViewCompositionalLayout.png" height="300">
 
 1. Create a reference to the Collection View from the View Controller 
