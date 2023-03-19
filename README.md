@@ -2,7 +2,7 @@
 Study guide on iOS and Swift
 
 ## Swift
-
+* [Access Modifiers](https://github.com/cs4372/ios-study-guide/blob/master/swift/Access-Modifiers.md)
 * [Classes vs Structs](https://github.com/cs4372/ios-study-guide/blob/master/swift/Class-vs-Struct.md)
 * [Closure](https://github.com/cs4372/ios-study-guide/blob/master/swift/Closure.md)
 * [Collection Types](https://github.com/cs4372/ios-study-guide/blob/master/swift/Collection-Types.md)
@@ -27,6 +27,7 @@ Study guide on iOS and Swift
 ## Basics
 * [Audio](https://github.com/cs4372/ios-study-guide/blob/master/basics/Audio/Audio.md)
 * [Auto Layout](https://github.com/cs4372/ios-study-guide/blob/master/basics/AutoLayout/AutoLayout.md)
+* [Camera Roll](https://github.com/cs4372/ios-study-guide/blob/master/basics/CameraRoll/CameraRoll.md)
 * [CocoaPods](https://github.com/cs4372/ios-study-guide/blob/master/basics/CocoaPods.md)
 * [Codable](https://github.com/cs4372/ios-study-guide/blob/master/basics/Codable.md)
 * [Core Data](https://github.com/cs4372/ios-study-guide/blob/master/basics/CoreData/CoreData.md)
