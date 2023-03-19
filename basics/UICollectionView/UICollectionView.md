@@ -1,7 +1,8 @@
 ## UICollectionView
 
+- Collection views can display cells in grids, columns, rows, or tables.
 - allows you to lay out /customize items however you want
-- layouts in grids instead of rows like a table view
+- layouts in grids instead of only rows like a table view
 - has a UICollectionViewLayout object, so you can customize the layout of the collection view
 - setup is very similar to UITableView
   
@@ -41,6 +42,9 @@ extension ViewController: UICollectionViewDataSource {
 ** Use `indexPath.item` in CollectionView and `indexPath.row` in TableView. The values are the same either way.
 
 ### Layout using UICollectionViewCompositionalLayout
+
+- Compositional layout lets you construct views by combining different components: sections, groups, and items. 
+- A section represents the outer container view that surrounds a group of items.
 
 <img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/UICollectionView/UICollectionViewCompositionalLayout.png" height="300">
 
