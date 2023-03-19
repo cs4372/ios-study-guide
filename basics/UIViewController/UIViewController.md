@@ -1,6 +1,7 @@
 ## UIViewController
 
 ### View Controller
+- acts as a bridge between views and your data models. Each view controller is responsible for managing a view hierarchy, updating the content in views, and responding to events in the user interface
 - class that controls an instance of UIView, and handles all the logic and code behind it
 - the sole owner of its view and any subviews it creates
 - manages how we transition from 1 view to another and logic that sets up the user interface
