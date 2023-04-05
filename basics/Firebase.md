@@ -73,4 +73,3 @@ ref.child("user").removeValue() // going to delete the key as well
 
 - Avoid nesting
 - Flatten data structures
-
