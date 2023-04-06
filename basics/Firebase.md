@@ -68,6 +68,11 @@ ref.updateChildValues(updates)
 ref.child("user").removeValue() // going to delete the key as well
 ```
 
+## observeSingleEvent vs observe
+
+observeSingleEvent - retrieves the data once and then stops listening for changes
+
+observe - continuously listens for changes and updates the data locally whenever there is a change in the database
 
 ## Best practices for data structure
 
