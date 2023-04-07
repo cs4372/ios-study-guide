@@ -1,6 +1,6 @@
 ## Pass Data between Controllers
 
-1. Using Segues
+1. Using Segues 
 - built-in mechanism in iOS for transitioning between screens in an app. 
 - You can use them to pass data from one controller to another by setting a property of the destination controller before the segue is performed.
 
@@ -104,6 +104,143 @@ class SecondViewController: UIViewController {
             delegate?.sendData(data: text)
             dismiss(animated: true, completion: nil)
         }
+    }
+}
+```
+
+3. Using Singletons
+
+- provides a global point of access to a single instance of a class, making it easy to share data or functionality across different parts of your code
+- by ensuring that only one instance of a class exists, you can avoid inconsistencies and ensure that all parts of your app are using the same data or functionality
+
+Disadavantages:
+- difficult to test because they introduce global state into your code, which can make it hard to isolate and test individual components
+- can introduce tight coupling between different parts of your code, making it difficult to change or replace them later on
+
+DataManager.swift 
+```
+class DataManager {
+    //  creates a singleton instance of the DataManager class, which can be 
+    // accessed from anywhere in your app
+    static let shared = DataManager() // 
+    var textToDisplay: String?
+}
+```
+
+FirstViewController.swift 
+
+```
+import UIKit
+
+class FirstViewController: UIViewController {
+
+    @IBOutlet weak var textField: UITextField!
+
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        if let text = textField.text {
+            DataManager.shared.textToDisplay = text
+        }
+    }
+    
+    // ...
+}
+```
+
+SecondViewController.swift 
+```
+import UIKit
+
+class SecondViewController: UIViewController {
+
+    @IBOutlet weak var label: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if let text = DataManager.shared.textToDisplay {
+            label.text = text
+        }
+    }
+    
+    // ...
+}
+```
+
+4. Using Closures
+
+```
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var textLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    func setText(_ text: String) {
+         //override the label with the parameter received in this method
+        textLabel.text = text
+       }
+}
+```
+
+```
+class SecondViewController: UIViewController {
+
+    @IBOutlet weak var textField: UITextField!
+    
+    func getText() -> String {
+        //returns the pet that is selected, as a String
+        if let text = textField.text {
+            return text
+        }
+        return ""
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func textClick(_ sender: UIButton) {
+        if let vc = presentingViewController as? ViewController {
+               //before dismissing the Form ViewController, pass the data inside the closure
+                 dismiss(animated: true, completion: {
+                     vc.setText(self.getText())
+             })
+         }
+     }
+}
+```
+
+5. Notification Center:
+
+FirstViewController.swift
+```
+@IBAction func buttonTapped(_ sender: UIButton) {
+    let textToPass = textField.text ?? ""
+    let data = ["text": textToPass]
+    // Sends a notification with the data to be passed
+    NotificationCenter.default.post(name: Notification.Name("TextNotification"), object: nil, userInfo: data)
+}
+```
+
+SecondViewController.swift
+```
+override func viewDidLoad() {
+    super.viewDidLoad()
+    // add an observer for the notification with the same name
+    // handleNotification function is called when the notification is received
+    NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(_:)), name: Notification.Name("TextNotification"), object: nil)
+}
+
+@objc func handleNotification(_ notification: Notification) {
+    if let data = notification.userInfo as? [String: String], let text = data["text"] {
+        // Use the text here
     }
 }
 ```
