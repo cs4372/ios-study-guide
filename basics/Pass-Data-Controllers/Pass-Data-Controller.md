@@ -219,6 +219,8 @@ class SecondViewController: UIViewController {
 
 5. Notification Center:
 
+ When the user taps the button in the first view controller, a notification is sent with the text data, and the second view controller receives the notification and uses the text data as needed.
+
 FirstViewController.swift
 ```
 @IBAction func buttonTapped(_ sender: UIButton) {

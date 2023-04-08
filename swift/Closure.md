@@ -178,6 +178,57 @@ let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, res
 task.resume()
 ```
 
+## Escaping Closures
+
+- An escaping closure is a closure that is passed as an argument to a function but is not executed within the function itself. Instead, it can be stored or used outside of the function's scope.
+- When a closure is passed to a function as an argument, it is typically executed immediately. However, if the closure is marked as `@escaping`, it means that the closure may be stored or used later on, so the function needs to keep it alive beyond its own execution. This is typically done by storing the closure in a property or passing it to another function that will execute it later.
+- By marking the closure as `@escaping`, the function ensures that the closure is not deallocated when it returns, and can be executed later when the asynchronous operation completes.
+-  In summary, the @escaping attribute is required to ensure that the closure is still available for execution when the delayed block / function executes because it allows the closure to outlive the function that it's passed into and be captured and executed by the delayed block.
+
+## Example
+
+```
+class ViewController: UIViewController {
+    @IBOutlet weak var textLabel: UILabel!
+
+    func getData() { 
+        // it's fine to deinitialize the class, we don't need it to be alive
+        downloadData4 { [weak self] (returnedData) in 
+            self?.textLabel = returnedData.data
+        }
+    }
+
+    func downloadData() -> String { 
+        return "New data!"
+    }
+
+    func downloadData2(completionHandler: DownloadCompletion) { 
+        completionHandler("New data!")
+    }
+
+    // Not going to immediately execute and return
+    func downloadData3(completionHandler: @escaping DownloadCompletion) { 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            completionHandler("New data!")
+        }
+    }
+
+    func downloadData4(completionHandler: @escaping DownloadCompletion) { 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            let result = DownloadResult(data: "New data!")
+            completionHandler(result)
+        }
+    }}
+
+struct DownloadResult { 
+    let data: String
+}
+
+typealias DownloadCompletion = (DownloadResult) -> ()
+```
+
+
+
 Resources:
 - https://docs.swift.org/swift-book/LanguageGuide/Closures.html#
 - https://github.com/codepath/ios_guides/wiki/Understanding-Swift#closures
@@ -186,3 +237,4 @@ Resources:
 - https://www.weheartswift.com/closures/
 - https://www.ecanarys.com/Blogs/ArticleID/342/Swift-Closures
 - https://www.codingem.com/swift-completion-handlers/
+- [How to use escaping closures in Swift](https://www.youtube.com/watch?v=7gg8iBH2fg4&t=506s)
