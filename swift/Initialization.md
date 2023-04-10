@@ -67,7 +67,8 @@ init( __ INPUT PARAMETER __ ) {
 }
 ```
 
-Convenience initializers are secondary, supporting initializers for a class. You can define a convenience initializer to call a designated initializer from the same class as the convenience initializer with some of the designated initializer’s parameters set to default values. You can also define a convenience initializer to create an instance of that class for a specific use case or input value type.
+#### Convenience initializers
+- are secondary, supporting initializers for a class. You can define a convenience initializer to call a designated initializer from the same class as the convenience initializer with some of the designated initializer’s parameters set to default values. You can also define a convenience initializer to create an instance of that class for a specific use case or input value type.
 
 ```
 convenience init( __ INPUT PARAMETER __ ) {
@@ -95,5 +96,77 @@ Cat
 Dusty
 ```
 
+#### Failable Initializer
+
+- In some cases, some intializers may or may not work. 
+- We place a question mark (?) after the init keyword and return nil if something goes wrong. For example,
+
+```
+class File {
+
+  var folder: String
+
+  // failable initializer
+  init?(folder: String) {
+
+    // check if empty
+    if folder.isEmpty {
+      print("Folder Not Found") // 1st output
+      return nil
+    }
+    self.folder = folder
+  }
+}
+
+// create folder1 object
+var file  = File(folder: "")
+if (file != nil) {
+  print("File Found Successfully")
+}
+else {
+  print("Error Finding File") // 2nd output
+}
+```
+
+#### Required initializer
+- If you mark an initializer required in your class, you have to mark as required in every level - subclasses of that class have to implement it too.
+
+```
+class Point {
+    let x: Int
+    let y: Int
+
+    required init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
+}
+
+class NamedPoint: Point {
+    let label: String?
+
+    required init(x: Int, y: Int) {
+        self.label = nil
+
+        super.init(x: x, y: y)
+    }
+}
+
+let p1 = NamedPoint(x: 1, y: 1)
+```
+
+`required init`
+
+```
+required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+}
+```
+This code is needed to make sure that all of the inherited properties and setup code from its superclass is properly initialized as well, like when it's loaded from a storyboard or a nib file. 
+
+Nib file: binary file format used by Apple's Interface Builder application to store graphical user interface (GUI) designs. It contains information about the UI elements, their layout, etc. When the app is built, the nib file is compiled into a format that can be loaded and displayed by the app.
+
 Resources: 
 - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/initialization/
+- https://theswiftdev.com/swift-init-patterns/ 
+- https://www.programiz.com/swift-programming/initializer
