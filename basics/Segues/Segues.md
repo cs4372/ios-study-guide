@@ -81,7 +81,7 @@ class SecondViewController: UIViewController {
 
 ### Unwind Segues 
 
-- Navigate back through pushing push, modal, segues and you. On top of that you can actually unwind through not only one but a series of push/modal/popover segues, e.g. "go back" multiple steps in your navigation hierarchy with a single unwind action.
+- Navigate back through pushing push, modal, and segues. On top of that you can actually unwind through not only one but a series of push/modal/popover segues, e.g. "go back" multiple steps in your navigation hierarchy with a single unwind action.
 
 Scenario:
 - Navigation Controllers stack view controllers on top of each other and as you progress, it starts pushing the controllers in a stack and popping off the controllers when you go back. 
