@@ -1,13 +1,13 @@
 ## MVC
 
 - architectural pattern made of up 3 main objects:
-## Model (handles how data is stored)
+### Model (handles how data is stored)
 - A model object groups the data you need to represent items or concepts
 - Model objects are made up of properties that represent attributes of the type, and they sometimes have methods for updating and modifying their own properties.
 
 E.g. task in a to-do list, the names of products in a store
 
-## View (represents UI)
+### View (represents UI)
 - presenting data to the user and handling user interaction.
 - When users interacts with your app, they are interacting with the view layer. It should not contain any business logic.
 - Includes UIView subclasses, Classes that part of UIKit, Core Animation, Core Graphics
@@ -15,7 +15,7 @@ E.g. task in a to-do list, the names of products in a store
 
 E.g. a table showing the list of products available
 
-## Controller (mediator between model and view)
+### Controller (mediator between model and view)
 - altering the Model by reacting to the user’s actions performed on the View and updating the View with changes from the Model.
 For example, when the user interacts with a view, the view sends a message to a view controller, and the view controller can then update the model object.
 
@@ -35,6 +35,7 @@ Helper controllers:
 - are useful anytime you want to consolidate related data or functionality so that it can be accessed by other objects in your app. 
 - E.g. NetworkController, which manages all the network requests in a given app.
 
+### Example 
 E.g. Imagine you're tasked with building an app to track photos of meals that the user has eaten, along with notes and an optional rating of each meal.
 
 #### Model
