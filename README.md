@@ -51,3 +51,8 @@ Study guide on iOS and Swift
 * [URLSession](https://github.com/cs4372/ios-study-guide/blob/master/basics/URLSession/URLSession.md)
 * [Timer](https://github.com/cs4372/ios-study-guide/blob/master/basics/Timer.md)
 * [UserDefaults](https://github.com/cs4372/ios-study-guide/blob/master/basics/UserDefaults.md)
+
+
+## Architecture Patterns
+* [MVC](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVC.md)
+* [MVVM](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM.md)
