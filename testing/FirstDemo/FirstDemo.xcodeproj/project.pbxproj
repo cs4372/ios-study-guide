@@ -16,6 +16,7 @@
 		4785545C29EC66930018BDD6 /* FirstDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785545B29EC66930018BDD6 /* FirstDemoTests.swift */; };
 		4785546629EC66930018BDD6 /* FirstDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785546529EC66930018BDD6 /* FirstDemoUITests.swift */; };
 		4785546829EC66930018BDD6 /* FirstDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785546729EC66930018BDD6 /* FirstDemoUITestsLaunchTests.swift */; };
+		4785547529EC94A80018BDD6 /* Blogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785547429EC94A80018BDD6 /* Blogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4785546129EC66930018BDD6 /* FirstDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4785546529EC66930018BDD6 /* FirstDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDemoUITests.swift; sourceTree = "<group>"; };
 		4785546729EC66930018BDD6 /* FirstDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4785547429EC94A80018BDD6 /* Blogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				4785544D29EC66930018BDD6 /* Assets.xcassets */,
 				4785544F29EC66930018BDD6 /* LaunchScreen.storyboard */,
 				4785545229EC66930018BDD6 /* Info.plist */,
+				4785547429EC94A80018BDD6 /* Blogger.swift */,
 			);
 			path = FirstDemo;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				4785544929EC66910018BDD6 /* ViewController.swift in Sources */,
 				4785544529EC66910018BDD6 /* AppDelegate.swift in Sources */,
+				4785547529EC94A80018BDD6 /* Blogger.swift in Sources */,
 				4785544729EC66910018BDD6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

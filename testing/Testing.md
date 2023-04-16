@@ -75,6 +75,11 @@ func testPerformanceExample() throws {
 }
 ```
 
+### Set a breakpoint that breaks on test failure
+
+1. Open breakpoint navigator
+2. At the bottom of the navigator view is a button with a plus sign (+). Click on it, and select Test Failure Breakpoint
+
 - The first method is a normal unit test.
 - The second method is a performance test. It is used to test methods or functions that perform time-critical computations. The code you put into the measure closure is called 10 times, and the average duration is measured. Performance tests can be useful when implementing or improving complex algorithms and to make sure that their performance does not decline. 
 
