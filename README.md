@@ -56,3 +56,6 @@ Study guide on iOS and Swift
 ## Architecture Patterns
 * [MVC](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVC.md)
 * [MVVM](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM.md)
+
+## Testing
+* [Testing](https://github.com/cs4372/ios-study-guide/blob/master/testing/Testing.md)
