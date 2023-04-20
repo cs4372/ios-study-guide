@@ -92,6 +92,13 @@ func testPerformanceExample() throws {
 1. Open the scheme selection and click on Edit Scheme
 2. Select the Test option and uncheck the FirstDemoUITests target or Click Manage Schemas to uncheck the target
 
+#### Dealing with optional values in unit tests
+
+Use `XCTUnwrap(_:)`. This function unwraps its parameter and returns the unwrapped value. If the parameter is nil, this function throws an error. 
+
+#### Equitable
+- a protocol that allows two objects to be compared using the == operator
+
 Resources:
 - https://developer.apple.com/documentation/xcode/testing-your-apps-in-xcode?changes=_5
 - https://developer.apple.com/documentation/xctest

@@ -1,5 +1,10 @@
 ## Lifecycle
 
+`loadView()`
+- is a UIViewController method and is responsible for making the `view` property exist in the first place
+- When using storyboards, it will load your nib and attach it to the view, but when instantiating view controllers manually, all this method does is create an empty `UIView`
+- can override it to change this behaviour and add any kind of view to the view controller's view property
+
 `viewDidLoad()`
 - Called when content view created in memory / loaded from storyboard
 - Gets called `once` in the initial load
