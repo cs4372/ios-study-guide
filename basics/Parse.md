@@ -27,11 +27,11 @@ target 'ios-project' do
 end
 
 ```
-4. Run `pod install` and you should now have the latest parse release.
+4. Run `pod install` to fetch the latest file from cocoapods and install it to the project. You should now have the latest parse release.
 
 Note: If you have to delete the podfile and restart the procee again: Run `pod deintegrate` and `rm podfile.loc`
 
-5. After installation, multiple files will be created in the project and click on the one that ends with `.xcworkspace`. Open this file and you should be able to see the pods and all the project files.
+5. After installation, multiple files will be created in the project. Close the project and and click on the one that ends with `.xcworkspace`. Open this file and you should be able to see the pods and all the project files.
 
 ## Parse Server setup 
 
