@@ -5,7 +5,7 @@
 ### Parse Setup
 
 1. Install Cocoapods (library dependencies). Here is a [guide](https://guides.cocoapods.org/using/getting-started.html) on how to get started. Run `sudo gem install cocoapods`
-2. Navigate to the project and run `pod install`, then run `open -a Xcode Podfile` to create the Podfile. 
+2. Navigate to the project and run `pod install`. Run `pod init` to initialize a new pod file, then run `open -a Xcode Podfile` to create the Podfile. 
 
 `Note: Sometimes, running the command doesn't work, so manually open the podfile instead.`
 
