@@ -1,7 +1,7 @@
 ## Automatic Reference Count (ARC)
 
 - Swift uses ARC to track and manage your app's memory usage
-- keeps track of classes instances and decides when it is safe to deallocate the class instancesit monitors. It does this by counting the references of each class instance.
+- keeps track of classes instances and decides when it is safe to deallocate the class instances it monitors. It does this by counting the references of each class instance.
 - Reference counting applies only to instances of classes. ARC does not increase or decrease the reference count for values types, like struct or enum, because they are copied when assigned. 
 
 ### Functions of ARC
@@ -30,13 +30,13 @@ class Person {
     }
 }
 
-var cat : Person? = Player(salary: "200")
+var cat : Person? = Person(salary: "200")
 cat = nil   
 
 We construct an example of class Person named cat and provide all of the class’s data to it. By doing so, it gives cat a strong reference to the object.
 ```
 
-- An initializer in the Person class creates the instance’s score property and produces a signal to indicate that initialization is in progress. 
+- An initializer in the Person class creates the instance’s salary property and produces a signal to indicate that initialization is in progress. 
 - When an instance of the Person class is deallocated, it has a deinitializer that outputs a message for the deallocation operation.
 - ARC memory management does not deallocate any objects with strong references. Next, we nil the reference to the object cat, which deallocates the object it was referencing; this is how the deinit() function of the class Person is called before it deallocates the object.
 
@@ -53,10 +53,17 @@ We construct an example of class Person named cat and provide all of the class�
 - The use of weak and unowned references.
 
 ### Weak references cycles
-- does not maintain a strong hold on the object it refers to.
+- does not maintain a strong hold on the object it refers to
+- A weak reference does not increment the reference count, and it automatically becomes nil when the object it refers to is deallocated
+
+### weak self vs unowned self (both break strong reference cycles and avoid memory leaks)
+#### weak self
+-  it creates an optional weak reference to the object. The reference can become nil if the object is deallocated, meaning it handles the case where the object might not exist anymore
+#### unowned self
+- are non-optional and assume that the object will always exist when the closure is called. If the object is deallocated before the closure is executed, it can lead to a runtime crash if you try to access the unowned reference
 
 ### Example
-from https://www.youtube.com/watch?v=VcoZJ88d-vM (Retain Cycle, Automatic Reference Counting, Memory Leak)
+from [Retain Cycle, Automatic Reference Counting, Memory Leak](https://www.youtube.com/watch?v=VcoZJ88d-vM)
 
 <img src="https://github.com/cs4372/ios-study-guide/blob/master/swift/Automatic-Reference-Count/arc-code.png"/>
 
@@ -76,5 +83,5 @@ because matilda is not holding on to him anymore. This clears the retain cycle.
 Resources:
 - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting
 - https://developer.apple.com/videos/play/wwdc2021/10216/
-- https://www.youtube.com/watch?v=VcoZJ88d-vM (Retain Cycle, Automatic Reference Counting, Memory Leak)
+- [Retain Cycle, Automatic Reference Counting, Memory Leak](https://www.youtube.com/watch?v=VcoZJ88d-vM)
 - https://betterprogramming.pub/a-look-into-automatic-reference-counting-b17e9539d34f
