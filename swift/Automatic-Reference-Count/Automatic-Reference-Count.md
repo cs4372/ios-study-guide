@@ -80,6 +80,98 @@ if ARC is equal to 0.
 If we make the owner variable weak, there will be no strong reference pointing to Sean. So, if we make `sean = nil`, then he can be removed from memory
 because matilda is not holding on to him anymore. This clears the retain cycle.
 
+#### `weak self` in different scenarios:
+
+1. Notification Center
+
+```
+class ViewController: UIViewController {
+
+    @IBOutlet weak var backgroundView: UIView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Register observer for "CustomNotification"
+        NotificationCenter.default.addObserver(forName: Notification.Name("CustomNotification"), object: nil, queue: nil) { [weak self] _ in
+            // Update the background color using weak self
+            self?.backgroundView.backgroundColor = .red
+        }
+    }
+    
+    deinit {
+        // Remove observer when ViewController is deallocated
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // Function to simulate posting the "CustomNotification"
+    func postCustomNotification() {
+        NotificationCenter.default.post(name: Notification.Name("CustomNotification"), object: nil)
+    }
+}
+```
+
+- In this example, we want to update the background color of backgroundView when a custom notification named "CustomNotification" is received. Within the closure that handles the notification in `NotificationCenter`, we capture self weakly using [weak self] to avoid a strong reference cycle
+- The optional chaining (self?) ensures that the background color is only updated if self (the ViewController) still exists. If self has been deallocated, the weak reference will be nil, and the background color update will be skipped
+- By using weak self in this scenario, we prevent a potential retain cycle between the closure and the ViewController. It allows the ViewController to be deallocated properly when it's no longer needed, while still being able to handle the notification and update the UI if it's still available
+
+2. Asynchronous Network Request
+
+```
+class DataManager {
+    func fetchData(completion: @escaping (Result<Data, Error>) -> Void) {
+        // Simulating an asynchronous network request
+        DispatchQueue.global().async {
+            // Perform the network request and get the data
+            
+            // Call the completion handler, using weak self to avoid a strong reference cycle
+            completion(.success(data))
+        }
+    }
+}
+
+class ViewController: UIViewController {
+    let dataManager = DataManager()
+    
+    func loadData() {
+        dataManager.fetchData { [weak self] result in
+            // Handle the result using weak self to avoid retain cycle
+            
+            DispatchQueue.main.async {
+                // Update the UI based on the result
+            }
+        }
+    }
+}
+```
+
+3. Timer-based Actions
+
+```
+class ViewController: UIViewController {
+    var timer: Timer?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            // Perform timer-based action using weak self to avoid retain cycle
+            
+            // Update the UI or perform any other desired action
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        timer?.invalidate()
+        timer = nil
+    }
+}
+```
+
+- By capturing self weakly in the closure, we ensure that the ViewController can be deallocated even if the timer is still active. It helps prevent a strong reference cycle between the timer closure and the ViewController
+
 Resources:
 - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting
 - https://developer.apple.com/videos/play/wwdc2021/10216/
