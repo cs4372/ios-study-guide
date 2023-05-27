@@ -185,7 +185,7 @@ task.resume()
 - By marking the closure as `@escaping`, the function ensures that the closure is not deallocated when it returns, and can be executed later when the asynchronous operation completes.
 -  In summary, the @escaping attribute is required to ensure that the closure is still available for execution when the delayed block / function executes because it allows the closure to outlive the function that it's passed into and be captured and executed by the delayed block.
 
-## Example
+## Examples
 
 ```
 class ViewController: UIViewController {
@@ -227,6 +227,43 @@ struct DownloadResult {
 typealias DownloadCompletion = (DownloadResult) -> ()
 ```
 
+#### Perform a network requst
+
+```
+func fetchData(_ completion: @escaping (_ success: Bool, _ data: Data?) -> Void) {
+    
+   // Build an URL
+   let url = URL(string: "sample_url")!
+    
+   // Perform the network request
+   let task = URLSession.shared.dataTask(with: url) { data, response, error in
+      if let data = data {
+         // Success, call the completion handler with the data
+         completion(true, data)
+      } else {
+         // Failure, call the completion handler with nil data
+         completion(false, nil)
+      }
+   }
+   task.resume()
+}
+
+self.fetchData { success, data in
+   if success {        
+      guard let dataObject = data else { return }
+        
+      // Parse the data and update the UI
+      let json = try? JSONSerialization.jsonObject(with: dataObject)
+      print(json!)        
+   } else {
+      // Show an error message
+      print("Network request failed")
+   }
+}
+```
+
+- If we don't mark the closure as @escaping, it means that the closure should be used immediately, right where it is defined, before we even get the data from the network request
+- When we make a network request to fetch data, it takes some time for the data to arrive. So, marking the closure as @escaping ensures that it waits patiently for the data to arrive before running, allowing us to handle the fetched data correctly in our program
 
 
 Resources:
@@ -238,3 +275,4 @@ Resources:
 - https://www.ecanarys.com/Blogs/ArticleID/342/Swift-Closures
 - https://www.codingem.com/swift-completion-handlers/
 - [How to use escaping closures in Swift](https://www.youtube.com/watch?v=7gg8iBH2fg4&t=506s)
+- [What is a completion handler](https://www.tutorialspoint.com/what-is-a-completion-handler-in-swift)
