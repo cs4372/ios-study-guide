@@ -276,3 +276,4 @@ Resources:
 - https://www.codingem.com/swift-completion-handlers/
 - [How to use escaping closures in Swift](https://www.youtube.com/watch?v=7gg8iBH2fg4&t=506s)
 - [What is a completion handler](https://www.tutorialspoint.com/what-is-a-completion-handler-in-swift)
+- [You don’t (always) need [weak self]](https://medium.com/@almalehdev/you-dont-always-need-weak-self-a778bec505ef)
