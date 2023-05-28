@@ -41,6 +41,7 @@ Study guide on iOS and Swift
 * [Maps](https://github.com/cs4372/ios-study-guide/blob/master/basics/Maps/Maps.md)
 * [Parse](https://github.com/cs4372/ios-study-guide/blob/master/basics/Parse.md)
 * [Pass Data Between Controllers](https://github.com/cs4372/ios-study-guide/blob/master/basics/Pass-Data-Controllers/Pass-Data-Controller.md)
+* [Sandboxing](https://github.com/cs4372/ios-study-guide/blob/master/basics/Sandboxing.md)
 * [Segues](https://github.com/cs4372/ios-study-guide/blob/master/basics/Segues/Segues.md)
 * [TableView](https://github.com/cs4372/ios-study-guide/blob/master/basics/TableView/UITableView.md)
 * [UICollectionView](https://github.com/cs4372/ios-study-guide/blob/master/basics/UICollectionView/UICollectionView.md)
