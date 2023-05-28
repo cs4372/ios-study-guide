@@ -42,9 +42,9 @@ let value = userDefaults.bool(forKey: "myKey")
 let value = userDefaults.object(forKey: "myKey") as? Bool ?? false
 ```
 
-When to use User Defaults?
+### When to use User Defaults?
 - if you need to store small amounts of data that don't need to be secured
--  do not store sensitive information such as username / user token
+- do not store sensitive information such as username / user token
 
 References:
 - https://github.com/cs4372/ios-projects/tree/master/Todo-List/Todo-List
