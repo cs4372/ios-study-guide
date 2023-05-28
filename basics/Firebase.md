@@ -79,4 +79,4 @@ observe - continuously listens for changes and updates the data locally whenever
 - Avoid nesting
 - Flatten data structures
 
-* Local data persistence can't be done with Firebase as it requires network. We can use Realm for local data persistence. Often you'll have apps that use Realm and Firebase or Core Data and Firebase.
+*Note: Local data persistence can't be done with Firebase as it requires network. We can use Realm for local data persistence. Often you'll have apps that use Realm and Firebase or Core Data and Firebase.
