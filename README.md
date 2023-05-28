@@ -31,15 +31,12 @@ Study guide on iOS and Swift
 * [Camera Roll](https://github.com/cs4372/ios-study-guide/blob/master/basics/CameraRoll/CameraRoll.md)
 * [CocoaPods](https://github.com/cs4372/ios-study-guide/blob/master/basics/CocoaPods.md)
 * [Codable](https://github.com/cs4372/ios-study-guide/blob/master/basics/Codable.md)
-* [Core Data](https://github.com/cs4372/ios-study-guide/blob/master/basics/CoreData/CoreData.md)
 * [DispatchQueue](https://github.com/cs4372/ios-study-guide/blob/master/basics/DispatchQueue/DispatchQueue.md)
-* [Firebase](https://github.com/cs4372/ios-study-guide/blob/master/basics/Firebase.md)
 * [Geoloation](https://github.com/cs4372/ios-study-guide/blob/master/basics/Geolocation/Geolocation.md)
 * [JSON](https://github.com/cs4372/ios-study-guide/blob/master/basics/JSON/JSON.md)
 * [Lifecycle](https://github.com/cs4372/ios-study-guide/blob/master/basics/Lifecycle.md)
 * [Keyboard](https://github.com/cs4372/ios-study-guide/blob/master/basics/Keyboard/Keyboard.md)
 * [Maps](https://github.com/cs4372/ios-study-guide/blob/master/basics/Maps/Maps.md)
-* [Parse](https://github.com/cs4372/ios-study-guide/blob/master/basics/Parse.md)
 * [Pass Data Between Controllers](https://github.com/cs4372/ios-study-guide/blob/master/basics/Pass-Data-Controllers/Pass-Data-Controller.md)
 * [Sandboxing](https://github.com/cs4372/ios-study-guide/blob/master/basics/Sandboxing.md)
 * [Segues](https://github.com/cs4372/ios-study-guide/blob/master/basics/Segues/Segues.md)
@@ -51,8 +48,12 @@ Study guide on iOS and Swift
 * [UIViewController](https://github.com/cs4372/ios-study-guide/blob/master/basics/UIViewController/UIViewController.md)
 * [URLSession](https://github.com/cs4372/ios-study-guide/blob/master/basics/URLSession/URLSession.md)
 * [Timer](https://github.com/cs4372/ios-study-guide/blob/master/basics/Timer.md)
-* [UserDefaults](https://github.com/cs4372/ios-study-guide/blob/master/basics/UserDefaults.md)
 
+## Data Persistence
+* [Core Data](https://github.com/cs4372/ios-study-guide/blob/master/basics/CoreData/CoreData.md)
+* [Firebase](https://github.com/cs4372/ios-study-guide/blob/master/persistence/Firebase.md)
+* [Parse](https://github.com/cs4372/ios-study-guide/blob/master/persistence/Parse.md)
+* [UserDefaults](https://github.com/cs4372/ios-study-guide/blob/master/persistence/UserDefaults.md)
 
 ## Architecture Patterns
 * [MVC](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVC.md)
