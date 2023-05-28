@@ -22,7 +22,11 @@ Reasons for using it: Maintaining state between sessions, models the object laye
    
 3. We'll be able to create an instance of Person and tell core data to save it so we can retrieve the data later on. By default, core data is going to persist this data into a SQlite database and will translate this into a table in a SQlite database. 
 
-Start with `import CoreData` to ViewController.swift
+Start with `import CoreData` in ViewController.swift
+
+#### Core Data diagram:
+
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/CoreData/core-data.png"/>
 
 ### Create Records to Core Data
 - Refer to persistentContainer from appDelegate
