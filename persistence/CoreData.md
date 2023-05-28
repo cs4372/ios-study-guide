@@ -125,7 +125,26 @@ func deleteData() {
 ```
 
 ### Core Data Codegen 
-[Manual/None vs Class Definition vs Category/Extension](https://leekahseng.medium.com/core-data-codegen-explained-462c30341041])
+- Determines how to get access to the two classes Core Data needs to do your processing in Swift and how do we want to generate these files
+- It needs a class file where your entity has to extend the NSManagedObject and needs a property file which gives access to all the attribues which you describe in the Data Entity Model. 
+
+#### Class Definition
+- Xcode generates both classes for you and XCode manages those files for you 100%
+- Run command B and restart the project
+- Files don't exist in our project. To find it, go to Navigate, then Show in Finder
+- Usecase: if you're fine with no control over the files
+
+#### Manual/None
+- Run Shift + Option + Command + K, yhrn run command B to clean and build the project
+- Go to the Data Model, click on the Entity, go to Editor and select Create NSManagedObject Subclass. It will generate the files for you and you'll be able to access them in the project
+- Pro is that we can add extra functionality here
+- Downside is that the files won't be auto-generated if we add an attribute
+- Usecase: if you want full control over the files
+
+#### Category/Extension
+- You can create the files yourself and add any functions/properties you need
+- Files will get updated upon a new build if you add new /rename attributes
+- Usecase: if you want some control over the files
 
 Resources:
 - https://medium.com/@ankurvekariya/core-data-crud-with-swift-4-2-for-beginners-40efe4e7d1cc
