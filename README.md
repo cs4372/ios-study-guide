@@ -50,7 +50,7 @@ Study guide on iOS and Swift
 * [Timer](https://github.com/cs4372/ios-study-guide/blob/master/basics/Timer.md)
 
 ## Data Persistence
-* [Core Data](https://github.com/cs4372/ios-study-guide/blob/master/basics/CoreData/CoreData.md)
+* [Core Data](https://github.com/cs4372/ios-study-guide/blob/master/persistence/CoreData.md)
 * [Firebase](https://github.com/cs4372/ios-study-guide/blob/master/persistence/Firebase.md)
 * [Parse](https://github.com/cs4372/ios-study-guide/blob/master/persistence/Parse.md)
 * [UserDefaults](https://github.com/cs4372/ios-study-guide/blob/master/persistence/UserDefaults.md)
