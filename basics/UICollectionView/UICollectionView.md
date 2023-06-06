@@ -174,7 +174,7 @@ class ReminderListViewController: UICollectionViewController {
 [Example of UICollectionView in Storyboard:](https://github.com/cs4372/ios-study-guide/tree/master/basics/UICollectionView/UICollectionView1/UICollectionView1
 )
 
-<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/UICollectionView/UICollectionView1.png" height="300"/>
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/UICollectionView/UICollectionView1.png" height="600"/>
 
 Resources:
 - https://www.youtube.com/watch?v=cWfG79NaOv4&list=PL0X6fGhFFNTdrYtZQQ5_-5RZ-EhS76-ZK&index=14 
