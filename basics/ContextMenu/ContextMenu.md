@@ -60,7 +60,7 @@ class ViewController: UIViewController, UIContextMenuInteractionDelegate {
 }
 ```
 
-<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/ContextMenu/context-menu.png">
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/ContextMenu/context-menu.png" width="200px">
 
 Resources:
 
