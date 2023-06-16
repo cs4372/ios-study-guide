@@ -32,7 +32,6 @@ Study guide on iOS and Swift
 * [CocoaPods](https://github.com/cs4372/ios-study-guide/blob/master/basics/CocoaPods.md)
 * [Codable](https://github.com/cs4372/ios-study-guide/blob/master/basics/Codable.md)
 * [Context Menu](https://github.com/cs4372/ios-study-guide/blob/master/basics/ContextMenu/ContextMenu.md)
-* [DispatchQueue](https://github.com/cs4372/ios-study-guide/blob/master/basics/DispatchQueue/DispatchQueue.md)
 * [Geoloation](https://github.com/cs4372/ios-study-guide/blob/master/basics/Geolocation/Geolocation.md)
 * [JSON](https://github.com/cs4372/ios-study-guide/blob/master/basics/JSON/JSON.md)
 * [Lifecycle](https://github.com/cs4372/ios-study-guide/blob/master/basics/Lifecycle.md)
@@ -56,6 +55,8 @@ Study guide on iOS and Swift
 * [Parse](https://github.com/cs4372/ios-study-guide/blob/master/persistence/Parse.md)
 * [UserDefaults](https://github.com/cs4372/ios-study-guide/blob/master/persistence/UserDefaults.md)
 
+## Concurrency
+* [Threads-Queues-GCD](https://github.com/cs4372/ios-study-guide/blob/master/concurrency/Threads-GCD/Threads-GCD.md)
 ## Architecture Patterns
 * [MVC](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVC.md)
 * [MVVM](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM.md)
