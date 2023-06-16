@@ -26,17 +26,35 @@ Responsibility:
 
 ### Different Queues
 
-#### Main Queue 
+#### Main Queue (Serial)
+- Tasks come in in order, everything happens 1 at a time, in order
+
+Task 4 -> Task 3 -> Task2 -> Task 1
+- Task 2 won't start until Task 1 is 100% complete
+
 - Most important one of all. The queue where all blocks of code that affect the UI must be run on. System uses a single thread to process all the blocks of code in the main queue
 
-#### Background Queues
+Pros: 
+- Predictable Execution Order
+- Prevents Race Condition (when two or more threads compete to access shared data concurrently, leading to unexpected and inconsistent outcomes)
+
+Cons:
+- Slower 
+
+#### Background Queues (Concurrent)
+- Everything still starts in order but Task 2 doesn't have to wait until Task 1 to start
+- Order of completion is unpredictable as Task 4 can finish sooner than Task 2
 - Uses to queue up any long-lived, non UI tasks
 - Often running simultaneously and in parallel with the main UI queue
 - Use quality of service (QoS) to determine which queue gets more proriotiy over others
 
+Pros:
+- Faster
+- Unpredictable Order
+
 ### Creating Queues 
 
-#### Main Queue 
+#### Main Queue (mostly for UI)
 - DispatchQueue.main
 
 #### Background Queues
@@ -75,6 +93,7 @@ If you don't specific a QoS, then it will be set to default
 ```
 DispatchQueue.main.sync { 
     // Code to be executed
+    self.tableView.reloadData()
 }
 ```
 
