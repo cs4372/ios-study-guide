@@ -1,10 +1,8 @@
-### Threads and Grand Central Dispatch
-
-<img src="concurrency/concurrency-parallelism.jpeg" height="200"/>
+### Threads, Concurrency, Parallelism, Grand Central Dispatch, Queues
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/concurrency/concurrency-parallelism.jpeg" height="200"/>
 
 ### Concurrency (Handling multiple tasks or processes at the same time)
 - Multiple tasks progress at the same time but are not executed simultaneously 
-- The worker system switches between tasks until all the tasks are completed or it can work sequentially by completing one task before moving to the next task
 - Concurrent tasks can either be executed sequentially whereby one task is completed before another one starts or concurrently where there is switching between tasks until all tasks are completed
 - Accomplishes multiple tasks faster
 
