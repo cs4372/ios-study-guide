@@ -1,5 +1,18 @@
 ### Threads and Grand Central Dispatch
 
+<img src="concurrency/concurrency-parallelism.jpeg" height="200"/>
+
+### Concurrency (Handling multiple tasks or processes at the same time)
+- Multiple tasks progress at the same time but are not executed simultaneously 
+- The worker system switches between tasks until all the tasks are completed or it can work sequentially by completing one task before moving to the next task
+- Concurrent tasks can either be executed sequentially whereby one task is completed before another one starts or concurrently where there is switching between tasks until all tasks are completed
+- Accomplishes multiple tasks faster
+
+### Parallelism (Executing multiple tasks simultaneously)
+- Executing multiple tasks in parallel
+- Parallel tasks are split into subtasks that are assigned to multiple workers and then completed simultaneously.
+- Not as efficient as many workers are used to accomplish 1 task
+
 ### Threads
 
 Every iOS application has a main thread, which is to display your user interface and listen for events. 
@@ -10,9 +23,11 @@ Complex computations may slow down the main thread and freeze the app, hence it 
 
 A queue is just a bunch of code blocks, queued up waiting for a thread to execute them. We don't really need to worry about threads in Swift. Only queues. The system takes care of allocating threads to execute code off the queues. 
 
+###  2 ways to achieve concurrency: Grand Central Dispatch and OperationQueue
+
 ### Grand Central Dispatch (GCD)
 
-- The API responsible for managing your queues
+- The API responsible for managing your queues in the First-in First-out order
 
 Responsibility:
 - Create a queue 
@@ -194,4 +209,6 @@ print("Continue Execution")
 ```
 
 Resources:
+- [Concurrent vs Parallel Tasks for a Worker System](https://blog.iron.io/concurrent-vs-parallel-tasks-for-a-worker-system/)
 - [Threads and Group Central Dispatch](https://www.youtube.com/watch?v=uRLcV2Rvheg)
+- [Parallel Programming with Swift — Part 1/4](https://medium.com/swift-india/parallel-programming-with-swift-part-1-4-df7caac564ae)
