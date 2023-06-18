@@ -11,7 +11,16 @@
 - Parallel tasks are split into subtasks that are assigned to multiple workers and then completed simultaneously.
 - Not as efficient as many workers are used to accomplish 1 task
 
+### Process
+- A process represents an individual running application
+- Has at least 1 thread 
+- Each process runs independently and has its own memory space, file handles, and system resources
+- In iOS, each app typically runs as a separate process, ensuring isolation and security
+
 ### Threads
+- is a lightweight unit of execution within a process
+- Multiple threads can exist within a single process, each running concurrently and performing different tasks
+- Threads share the same memory space within a process, allowing them to access and modify shared data
 
 Every iOS application has a main thread, which is to display your user interface and listen for events. 
 
@@ -67,13 +76,18 @@ Pros:
 
 ### Creating Queues 
 
-#### Main Queue (mostly for UI)
-- DispatchQueue.main
+#### Main Queue (DispatchQueue.main)
+- used for performing UI-related tasks, such as updating UI elements or interacting with UI frameworks
+- Place response from API request, db queries
 
-#### Background Queues
-- DispatchQueue.global(qos: QoS)
+#### Background Queues(DispatchQueue.global)
+- Working with long running tasks such as network request, db queries
+- can offload these tasks to a global background queue, allowing them to run concurrently and asynchronously without blocking the main thread. This helps to maintain a responsive UI and prevent the app from freezing or becoming unresponsive while waiting for the network or database operations to complete
 
-#### Background Queues (in the order of priority)
+### DispatchQueue.global().sync
+- Avoid using DispatchQueue.global().sync on the main thread as it can lead to deadlocks or blocking the UI
+
+#### Background Queues (QoS)(in the order of priority)
 `.userInteractive`
 
 - have the highest priority on the system 
@@ -98,10 +112,11 @@ If you don't specific a QoS, then it will be set to default
 - Assign this class to asks or dispatch queues that you use to perform work while your app is running in the background 
 - E.g. Maintenance tasks or cleanup
 
-### Synchronous vs Asynchronous 
+### Threads can be used for both asynchronous and synchronous execution.
 
 #### Synchronous
 - The program waits until execution finishes before the method call returns. It will block the user from doing anything until it is executed 
+- Blocks the main thread until closure execution is completed
 
 ```
 DispatchQueue.main.sync { 
@@ -111,8 +126,9 @@ DispatchQueue.main.sync {
 ```
 
 #### Asynchronous (most common)
-- method call returns immediately without waiting for the task to completes
-  
+- The method call DispatchQueue.global().async returns immediately after enqueuing the provided closure (the block of code) for execution on the global queue. 
+- It does not wait for the code inside the closure to complete before returning
+- So program will continue executing the subsequent code without being blocked by the code inside the closure
 ```
 DispatchQueue.global().async { 
     // Code to be executed
@@ -121,6 +137,7 @@ DispatchQueue.global().async {
 
 Examples:
 
+* System is executing the tasks on the main thread, which is the default behavior for global queues when using sync.
 ```
 DispatchQueue.global().sync {
     sleep(2)
@@ -205,6 +222,16 @@ group.wait() // Everything must wait until all the group tasks are done
 print("All tasks done")
 print("Continue Execution")
 ```
+
+### Tips:
+
+#### How to check what the current thread is?
+- Use the Thread.current property in Swift
+- E.g. print("Current Thread = \(Thread.current)")
+
+#### Do not use DispatchQueue.main.sync { ... }
+- Attempting to synchronously execute a work item on the main queue results in deadlock
+- Do not update UI from a background thread
 
 Resources:
 - [Concurrent vs Parallel Tasks for a Worker System](https://blog.iron.io/concurrent-vs-parallel-tasks-for-a-worker-system/)
