@@ -14,6 +14,10 @@
 		47C783302A44065200E9A61A /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47C7832E2A44065200E9A61A /* MainViewController.xib */; };
 		47C783392A44114C00E9A61A /* MainViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C783382A44114C00E9A61A /* MainViewController+TableView.swift */; };
 		47C7833B2A44128000E9A61A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7833A2A44128000E9A61A /* MainViewModel.swift */; };
+		47C7833D2A45497200E9A61A /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7833C2A45497200E9A61A /* NetworkConstants.swift */; };
+		47C7833F2A454DDF00E9A61A /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47C7833E2A454DDF00E9A61A /* APIKeys.plist */; };
+		47C783412A45515500E9A61A /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C783402A45515500E9A61A /* APICaller.swift */; };
+		47C783462A45522100E9A61A /* TrendingMoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C783452A45522100E9A61A /* TrendingMoviesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		47C7832E2A44065200E9A61A /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		47C783382A44114C00E9A61A /* MainViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableView.swift"; sourceTree = "<group>"; };
 		47C7833A2A44128000E9A61A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		47C7833C2A45497200E9A61A /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		47C7833E2A454DDF00E9A61A /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		47C783402A45515500E9A61A /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		47C783452A45522100E9A61A /* TrendingMoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,7 @@
 		47C7830C2A4404D300E9A61A = {
 			isa = PBXGroup;
 			children = (
+				47C7833E2A454DDF00E9A61A /* APIKeys.plist */,
 				47C783172A4404D300E9A61A /* MVVM-Example1 */,
 				47C783162A4404D300E9A61A /* Products */,
 			);
@@ -58,6 +67,7 @@
 		47C783172A4404D300E9A61A /* MVVM-Example1 */ = {
 			isa = PBXGroup;
 			children = (
+				47C783442A45521100E9A61A /* Model */,
 				47C783372A440A3900E9A61A /* Networking */,
 				47C783362A440A1600E9A61A /* Extensions */,
 				47C783352A440A1100E9A61A /* Classes */,
@@ -130,8 +140,18 @@
 		47C783372A440A3900E9A61A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				47C7833C2A45497200E9A61A /* NetworkConstants.swift */,
+				47C783402A45515500E9A61A /* APICaller.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		47C783442A45521100E9A61A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				47C783452A45522100E9A61A /* TrendingMoviesModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47C783252A4404D500E9A61A /* LaunchScreen.storyboard in Resources */,
+				47C7833F2A454DDF00E9A61A /* APIKeys.plist in Resources */,
 				47C783302A44065200E9A61A /* MainViewController.xib in Resources */,
 				47C783222A4404D500E9A61A /* Assets.xcassets in Resources */,
 			);
@@ -206,9 +227,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				47C783192A4404D300E9A61A /* AppDelegate.swift in Sources */,
+				47C783412A45515500E9A61A /* APICaller.swift in Sources */,
 				47C783392A44114C00E9A61A /* MainViewController+TableView.swift in Sources */,
+				47C7833D2A45497200E9A61A /* NetworkConstants.swift in Sources */,
 				47C7832F2A44065200E9A61A /* MainViewController.swift in Sources */,
 				47C7833B2A44128000E9A61A /* MainViewModel.swift in Sources */,
+				47C783462A45522100E9A61A /* TrendingMoviesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
