@@ -1,6 +1,6 @@
 ## MVVM 
 
-<img src="https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM/MVVM_diagram.png" height="200"/>
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM/MVVM_diagram.png" height="300"/>
 
 ### Model
 - Data model / entity that your app has
