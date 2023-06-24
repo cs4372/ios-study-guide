@@ -1,20 +1,27 @@
 ## MVVM 
 
-<img src="https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM/MVVM.png" height="200"/>
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM/MVVM_diagram.png" height="200"/>
 
-View Model
-- receives info from View Controller, `handles this information and transforms it into values that can be displayed in a view`, and sends it back to VC
+### Model
+- Data model / entity that your app has
+- Simply structs/classes with associated properties
+- Holds the data that has been mapped from raw data structure derived from APIs / databases 
+- Used by `View Model and updates whenever VM sends new updates`
 
-Model
-- Same model as in MVC
-- simply holds the data and has nothing to do with business logic
-- used by `View Model and updates whenever VM sends new updates`
+### View / View Controller
+- Visual element that gets displayed on the UI
+- All the UI components on an app screen are views
+- Contains only the UI logic, such as data rendering, navigation
 
+### View Model
+- Receives UI events and perform business logic, transforming it into values that can be displayed on the UI
+- Does not modify the UI or has any reference to the view
 
-MVVMModel
+### Example 
+#### Model
 
 ```
-struct MVVMModel { 
+struct Model { 
     let firstName: String
     let lastName: String
     let score: Int
@@ -22,15 +29,15 @@ struct MVVMModel {
 ```
 
 ```
-struct MVVMViewModel { 
+struct ViewModel { 
     let name: String
     let level: String
 
-    init(_ mvvmModel: MVVMModel) { 
-        name = "\(mvvmModel.firstName) \(mvvmModel.lastname)"
-        if mvvmModel.score <= 40 { 
+    init(_ model: Model) { 
+        name = "\(model.firstName) \(model.lastname)"
+        if model.score <= 40 { 
             level = "Beginner"
-        } else if mvvmModel.score <= 70 { 
+        } else if model.score <= 70 { 
             level = "Intermediate"
         } else { 
             level = "Expert"
@@ -39,11 +46,11 @@ struct MVVMViewModel {
 }
 ```
 
-View Controller 
+#### View Controller 
 
 ```
 class MVVMTableViewController: UITableViewController { 
-    var data: [MVVMModel] = []
+    var data: [ViewModel] = []
 
     override func viewDidLoad() { 
         super.viewDidLoad() { 
@@ -76,25 +83,37 @@ class MVVMTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { 
         let cell = tableView.dequeueReusableCell(withIdentifier: MVVMTableViewCell.identifier, for: indexPath) as! MVVMTableViewCell
-        cell.mvvmViewModel = MVVMViewModel(data[indexPath.row])
+        cell.viewModel = viewModel(data[indexPath.row])
         return cell
     }
 }
 ```
 
-TableViewCell 
+#### TableViewCell 
 
 ```
 class MVVMTableViewCell: UITableViewCell { 
     static let identifier = "MVVMTableViewCell"
 
-    var mvvmViewModel: MVVMViewModel! { 
+    var viewModel: ViewModel! { 
         didSet { 
-            textLabel?.text = mvvmViewModel.name
-            detailTextLabel?.text = mvvmViewModel.level
+            textLabel?.text = viewModel.name
+            detailTextLabel?.text = viewModel.level
         }
     }
 
     ....
 }
 ```
+
+### Why MVVM?
+
+1. Clear separation of concerns
+   - between View, ViewModel and Model, providing us with a more modularized code structure
+2. Avoid Bulky Controllers
+   - In MVC, as our app grows, controllers can become bloated and difficult to maintain. With MVVM, we move the business logic to ViewModel to help us organize and seperate code effectively
+3. Testability
+   - ViewModel contains the business logic, which can be easily unit tested without dependencies
+
+Resources:
+- [MVVM-1: A General Discussion](https://medium.com/swift-india/mvvm-1-a-general-discussion-764581a2d5d9)
