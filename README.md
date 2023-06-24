@@ -59,7 +59,7 @@ Study guide on iOS and Swift
 * [Threads-Queues-GCD](https://github.com/cs4372/ios-study-guide/blob/master/concurrency/Threads-GCD/Threads-GCD.md)
 ## Architecture Patterns
 * [MVC](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVC.md)
-* [MVVM](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM.md)
+* [MVVM](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM/MVVM.md)
 
 ## Testing
 * [Testing](https://github.com/cs4372/ios-study-guide/blob/master/testing/Testing.md)
