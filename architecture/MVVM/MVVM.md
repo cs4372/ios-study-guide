@@ -1,6 +1,6 @@
 ## MVVM 
 
-<img src="https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM.png" height="200"/>
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM/MVVM.png" height="200"/>
 
 View Model
 - receives info from View Controller, `handles this information and transforms it into values that can be displayed in a view`, and sends it back to VC
