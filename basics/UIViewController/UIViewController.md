@@ -6,12 +6,30 @@
 - the sole owner of its view and any subviews it creates
 - manages how we transition from 1 view to another and logic that sets up the user interface
 
+`init?(coder aDecoder: NSCoder)`
+- When you use a storyboard or a XIB file to create your view controller, the `init?(coder aDecoder: NSCoder)` initializer will be called automatically.
+- The `init?(coder aDecoder: NSCoder)` initializer is required when using programmatic UI.
+- The `required init?(coder: NSCoder)` initializer is marked as required because the superclass (UIViewController) implements NSCoding to ensure proper initialization.
+- NSCoding is a protocol in the Foundation framework of iOS and macOS that defines a mechanism for encoding (serializing) and decoding (deserializing) objects. In simple terms, it helps us save and load objects easily, so we can store them on a computer, send them over the internet, or use them in different parts of a program.
+
+
+- UIViewController implements `NSCoding` and it needs to be implemented to ensure propert initialization 
+
 What steps were taken by the application to present the blank view when the app runs?
 
-1. When the app runs, a new window is created
-2. Application goes to the storyboard to get the initial view controller is
-3. Creates an new instance of this view controller
-4. Takes that view controller's view and puts it in the main window 
+#### Storyboard version: 
+1. System loads the storyboard file which is specified in the project settings
+2. Initial view controller defined in the storyboard is instantiated and becomes the app's root view controller
+3. The hierarchy of the root view controller (subviews, etc) is loaded from the storyboard
+4. The view hierarchy is rendered on the screen and the app's UI becomes visible
+
+#### Programmatic UI:
+1. App's entry point is usually defined in AppDelegate's `application(_:didFinishLaunchingWithOptions:)` method
+2. In the entry point, a UIWindow is instantiated, which serves as the app's main window
+3. Root View Controller is created programmatically and assigned to the window's rootViewController property
+4. The hierarchy of the root view controller (subviews, etc) is constructed programmatically
+5. Call the window's makeKeyAndVisible() method to make the window and its associated view controller visible on the device's screen
+6. The view hierarchy is rendered on the screen and the app's UI becomes visible
 
 ## Configure View Controller programmatically 
 
@@ -166,7 +184,4 @@ see code ^
 
 Resources: 
 
-UIViewControllers in ios and swift:  https://www.youtube.com/watch?v=WuSesaZcaMQ
-
-
-
+1. [UIViewControllers in ios and swift](https://www.youtube.com/watch?v=WuSesaZcaMQ)
