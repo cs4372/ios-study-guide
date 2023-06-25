@@ -17,6 +17,7 @@
 		47C783782A47C5BE00E9A61A /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C783772A47C5BE00E9A61A /* CoinCell.swift */; };
 		47C7837A2A47C6CA00E9A61A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C783792A47C6CA00E9A61A /* HomeController.swift */; };
 		47C7837C2A47DBFF00E9A61A /* ViewCryptoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7837B2A47DBFF00E9A61A /* ViewCryptoController.swift */; };
+		47C7837E2A4802C800E9A61A /* ViewCryptoControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7837D2A4802C800E9A61A /* ViewCryptoControllerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		47C783772A47C5BE00E9A61A /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
 		47C783792A47C6CA00E9A61A /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		47C7837B2A47DBFF00E9A61A /* ViewCryptoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCryptoController.swift; sourceTree = "<group>"; };
+		47C7837D2A4802C800E9A61A /* ViewCryptoControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCryptoControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		47C7836E2A4762CB00E9A61A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				47C7837D2A4802C800E9A61A /* ViewCryptoControllerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				47C783562A4761AA00E9A61A /* AppDelegate.swift in Sources */,
 				47C7837A2A47C6CA00E9A61A /* HomeController.swift in Sources */,
+				47C7837E2A4802C800E9A61A /* ViewCryptoControllerViewModel.swift in Sources */,
 				47C783582A4761AA00E9A61A /* SceneDelegate.swift in Sources */,
 				47C783762A47C23D00E9A61A /* Coin.swift in Sources */,
 				47C7837C2A47DBFF00E9A61A /* ViewCryptoController.swift in Sources */,
