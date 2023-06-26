@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,5 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = UINavigationController(rootViewController: HomeController())
         self.window = window
         self.window?.makeKeyAndVisible()
+        
+        SDImageCache.shared.config.maxDiskSize = 100000 * 200
     }
 }

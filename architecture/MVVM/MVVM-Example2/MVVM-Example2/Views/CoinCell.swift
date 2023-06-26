@@ -37,8 +37,6 @@ class CoinCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        print("super class in CoinCell", self.superclass)
-        print("reuseIdentifier ===>", reuseIdentifier)
         self.setupUI()
     }
     
@@ -50,13 +48,7 @@ class CoinCell: UITableViewCell {
         self.coin = coin
         self.coinName.text = coin.name
         
-        let imageData = try? Data(contentsOf: self.coin.logoURL!)
-        
-        if let imageData = imageData {
-            DispatchQueue.main.async { [weak self] in
-                self?.coinLogo.image = UIImage(data: imageData)
-            }
-        }
+        self.coinLogo.sd_setImage(with: coin.logoURL)
     }
     
     // TODO: - PrepareForReuse
