@@ -117,3 +117,5 @@ class MVVMTableViewCell: UITableViewCell {
 
 Resources:
 - [MVVM-1: A General Discussion](https://medium.com/swift-india/mvvm-1-a-general-discussion-764581a2d5d9)
+- [How to implement MVVM pattern with Swift in iOS](https://johncodeos.com/how-to-implement-mvvm-pattern-with-swift-in-ios/)
+- [Fetching & Displaying API Data (MVVM, UIKit)](https://www.youtube.com/playlist?list=PLWOgAHhZbsIEh3dgGno4CPPsVcb4QUFy7)
