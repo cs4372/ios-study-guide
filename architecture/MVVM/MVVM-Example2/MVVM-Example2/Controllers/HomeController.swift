@@ -11,9 +11,11 @@ class HomeController: UIViewController {
     
     // MARK: Variables
     private let viewModel: HomeControllerViewModel
+    private let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - LifeCycle
     init(_ viewModel: HomeControllerViewModel = HomeControllerViewModel()) {
+        print("inside home vm init")
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,12 +27,15 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("home controller VM view did load")
         self.setupUI()
+        self.setupSearchController()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.viewModel.onCoinsUpdated = { [weak self] in
             DispatchQueue.main.async {
+                print("inside onCoinUpdated")
                 self?.tableView.reloadData()
             }
         }
@@ -57,6 +62,36 @@ class HomeController: UIViewController {
             self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
+    }
+    
+    private func setupSearchController() {
+        self.searchController.searchResultsUpdater = self
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchBar.placeholder = "Search Cryptos"
+        
+        self.navigationItem.searchController = searchController
+        self.definesPresentationContext = false
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        
+        self.searchController.searchBar.delegate = self
+        self.searchController.searchBar.showsBookmarkButton = true
+        self.searchController.searchBar.setImage(UIImage(systemName: "line.horizontal.3.decrease"), for: .bookmark, state: .normal)
+        self.searchController.searchBar.setImage(UIImage(systemName: "question"), for: .bookmark, state: .normal)
+    }
+}
+
+// MARK: - Search Controller Functions
+extension HomeController: UISearchResultsUpdating, UISearchBarDelegate {
+        
+    func updateSearchResults(for searchController: UISearchController) {
+        self.viewModel.setInSearchMode(searchController)
+        self.viewModel.updateSearchController(searchBarText: searchController.searchBar.text)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.viewModel.setInSearchMode(searchController)
+        print("search bar button clicked")
     }
 }
 
