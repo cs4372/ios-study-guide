@@ -49,6 +49,9 @@ Study guide on iOS and Swift
 * [URLSession](https://github.com/cs4372/ios-study-guide/blob/master/basics/URLSession/URLSession.md)
 * [Timer](https://github.com/cs4372/ios-study-guide/blob/master/basics/Timer.md)
 
+## How tos
+* [Create an iOS project without storyboards](https://github.com/cs4372/ios-study-guide/blob/master/how-tos/remove-storyboard.md)
+
 ## Data Persistence
 * [Core Data](https://github.com/cs4372/ios-study-guide/blob/master/persistence/CoreData.md)
 * [Firebase](https://github.com/cs4372/ios-study-guide/blob/master/persistence/Firebase.md)
