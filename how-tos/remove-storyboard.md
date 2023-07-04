@@ -6,4 +6,11 @@
 4. Go back to the result and select Info.plist Main. Select `Application Scene Manifest` and hit delete
 5. Go to AppDelegate.swift and delete the code
 
+Challenges of Storyboards:
+- Hard to resolve merge conflicts 
+- Code reviews are difficult
+- Gets complicated when app grows in complexity
+- Can't easily extract reusable components
+- Hard to refactor
+
 Tip: Create a code snippet for no storyboards for AppDelegate

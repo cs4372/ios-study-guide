@@ -1,5 +1,8 @@
 ## How to import and configure vector based graphics
 
+Vector based file types:
+- eps, svg, pdf
+
 Advantages of using vector graphics:
 - Can be scaled to any size without losing quality and this is useful for creating graphics that need to be displayed on various devices with different screen sizes
 - Are adaptable to different aspect ratios
