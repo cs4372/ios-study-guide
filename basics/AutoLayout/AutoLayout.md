@@ -1,6 +1,6 @@
 ## Auto Layout
 
-- Remember to set `translatesAutoresizingMaskIntoConstraints = false` so we can have more control over the view's constraints and how it responds to changes in the layout.
+- Remember to set `translatesAutoresizingMaskIntoConstraints = false` so we can have control over the view's constraints and how it responds to changes in the layout.
 #### Activiate a batch of constraints at once
 ```
 NSLayoutConstraint.activate([
@@ -105,10 +105,27 @@ extension LoginView {
 }
 ```
 
-#### Round a corner 
+### Round a corner 
 ```
 layer.cornerRadius = 5
 clipsToBounds = true
 ```
-
 The clipsToBounds property is a property of UIView that determines whether subviews that extend beyond the bounds of the view should be clipped or not.
+
+### Instrinsic content size
+- Labels have _instrinsic content size_, meaning we don’t need to explicitly set their size unless we want their size to be different than what they already are. They can size themselves. 
+- We can override them if we want to make the labels wider.
+- Image views have an intrinsic content size when they have an image in them, but they don’t when they are empty.
+
+### Aspect ratios
+- are the ratio between the width and the height of an image.
+- If an image has the same height and width (which we do in this case) the aspect ration will be 1:1. But other times the aspect ration may be something different - like 4:3.
+  
+ ```
+logo.widthAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.75),
+```
+
+Make the width of the logo view three-quarters (0.75) of its height. This constraint ensures that the logo view maintains a specific aspect ratio between its width and height.
+
+Resources:
+- [Using aspect ratios with auto layout](https://holyswift.app/using-aspect-ratio-with-auto-layout-in-ios/)
