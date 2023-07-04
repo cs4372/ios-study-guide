@@ -37,6 +37,8 @@ Study guide on iOS and Swift
 * [Lifecycle](https://github.com/cs4372/ios-study-guide/blob/master/basics/Lifecycle.md)
 * [Keyboard](https://github.com/cs4372/ios-study-guide/blob/master/basics/Keyboard/Keyboard.md)
 * [Maps](https://github.com/cs4372/ios-study-guide/blob/master/basics/Maps/Maps.md)
+* [NSAttributedString](https://github.com/cs4372/ios-study-guide/blob/master/basics/NSAttributedString/NSAttributedString.md)
+* [Playground](https://github.com/cs4372/ios-study-guide/blob/master/basics/Playground.md)
 * [Pass Data Between Controllers](https://github.com/cs4372/ios-study-guide/blob/master/basics/Pass-Data-Controllers/Pass-Data-Controller.md)
 * [Sandboxing](https://github.com/cs4372/ios-study-guide/blob/master/basics/Sandboxing.md)
 * [Segues](https://github.com/cs4372/ios-study-guide/blob/master/basics/Segues/Segues.md)

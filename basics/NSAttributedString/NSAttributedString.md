@@ -66,6 +66,8 @@ let label2 = UILabel()
 label2.attributedText = attributedString
 ```
 
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/NSAttributedString/NSAttributedString.png" />
+
 Resources:
 - [Formatting strings with NSAttributedString](https://www.hackingwithswift.com/read/24/4/formatting-strings-with-nsattributedstring)
 - [Attributed Strings with SwiftUI](https://swiftui-lab.com/attributed-strings-with-swiftui/)
