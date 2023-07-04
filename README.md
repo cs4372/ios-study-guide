@@ -30,7 +30,6 @@ Study guide on iOS and Swift
 * [Auto Layout](https://github.com/cs4372/ios-study-guide/blob/master/basics/AutoLayout/AutoLayout.md)
 * [Camera Roll](https://github.com/cs4372/ios-study-guide/blob/master/basics/CameraRoll/CameraRoll.md)
 * [CocoaPods](https://github.com/cs4372/ios-study-guide/blob/master/basics/CocoaPods.md)
-* [Codable](https://github.com/cs4372/ios-study-guide/blob/master/basics/Codable.md)
 * [Context Menu](https://github.com/cs4372/ios-study-guide/blob/master/basics/ContextMenu/ContextMenu.md)
 * [Geoloation](https://github.com/cs4372/ios-study-guide/blob/master/basics/Geolocation/Geolocation.md)
 * [JSON](https://github.com/cs4372/ios-study-guide/blob/master/basics/JSON/JSON.md)
