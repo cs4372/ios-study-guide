@@ -15,6 +15,23 @@ Make sure to add the following code to create an instance  of the controller cla
 PlaygroundPage.current.liveView = {controllerClass}()
 ```
 
+### Boilerplate:
+
+```
+import UIKit
+import PlaygroundSupport
+
+class ExampleController: UIViewController {
+     override func viewDidLoad() {
+          super.viewDidLoad()
+
+          self.view.bounds = CGRect(x: 0, y: 0, width: 375, height: 667)
+     }
+}
+
+PlaygroundPage.current.liveView = ExampleController()
+```
+
 E.g.
 
 ```
