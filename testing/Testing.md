@@ -103,3 +103,4 @@ Resources:
 - https://developer.apple.com/documentation/xcode/testing-your-apps-in-xcode?changes=_5
 - https://developer.apple.com/documentation/xctest
 - Test-Driven iOS Development with Swift - Fourth Edition By Dr. Dominik Hauser
+- [Applying Unit Tests to MVVM with Swift](https://medium.com/@koromikoneo/applying-unit-tests-to-mvvm-with-swift-ba5a79df8a18)
