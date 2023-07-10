@@ -168,6 +168,8 @@ class SecondViewController: UIViewController {
 
 4. Using Closures
 
+Example 1:
+
 ```
 import UIKit
 
@@ -216,6 +218,59 @@ class SecondViewController: UIViewController {
      }
 }
 ```
+
+Example 2 (MVVM):
+
+```
+class WeatherViewController {
+    var viewModel: WeatherViewModel
+    
+    init(viewModel: WeatherViewModel) {
+        self.viewModel = viewModel
+        self.viewModel.didUpdateWeatherData = { [weak self] in
+            self?.updateUI()
+        }
+    }
+    
+    func updateUI() {
+        // Update the user interface with the latest weather data from the ViewModel
+        let temperature = viewModel.temperature
+        let weatherDescription = viewModel.weatherDescription
+        // Update labels, icons, etc.
+    }
+    
+    func fetchWeatherButtonTapped() {
+        viewModel.fetchWeatherData()
+    }
+}
+
+// ViewModel
+class WeatherViewModel {
+    var didUpdateWeatherData: (() -> Void)?
+    
+    func fetchWeatherData() {
+        // Fetch weather data from a service or API
+        // Once the data is fetched, update the properties and invoke the callback closure
+        let temperature = 25.0
+        let weatherDescription = "Sunny"
+        
+        // Update ViewModel properties
+        self.temperature = temperature
+        self.weatherDescription = weatherDescription
+        
+        // Notify the View about the updated weather data
+        didUpdateWeatherData?()
+    }
+}
+
+let weatherViewModel = WeatherViewModel()
+let weatherView = WeatherViewController(viewModel: weatherViewModel)
+
+weatherView.fetchWeatherButtonTapped()
+````
+- WeatherViewController observes changes in the WeatherViewModel through the `didUpdateWeatherData` callback closure.
+- When the fetchWeatherData() method is called in the ViewModel, it updates its properties and invokes the callback closure to notify the View. The View then updates its user interface based on the new weather data.
+
 
 5. Notification Center:
 
