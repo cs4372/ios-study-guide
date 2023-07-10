@@ -62,9 +62,13 @@ Study guide on iOS and Swift
 
 ## Concurrency
 * [Threads-Queues-GCD](https://github.com/cs4372/ios-study-guide/blob/master/concurrency/Threads-GCD/Threads-GCD.md)
-## Architecture Patterns
+
+## Architectural Patterns
 * [MVC](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVC.md)
 * [MVVM](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM/MVVM.md)
+
+## Reactive Programming
+* [Combine](https://github.com/cs4372/ios-study-guide/blob/master/reactive-programming/Combine/Combine.md)
 
 ## Testing
 * [Testing](https://github.com/cs4372/ios-study-guide/blob/master/testing/Testing.md)
