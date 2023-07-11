@@ -18,3 +18,6 @@ A Switch is a publisher
 - When you toggle on and off, it sends the event. Once it's sent, we can have the light bulb.
 
 A light bulb is a subscription which listens to the event (the toggle) we've sent and it changes based on the emitted event.
+
+Resources:
+- [Master The Combine Framework: From Beginner to Advanced](https://www.youtube.com/watch?v=X2m0f2NoB10)
