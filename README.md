@@ -71,4 +71,5 @@ Study guide on iOS and Swift
 * [Combine](https://github.com/cs4372/ios-study-guide/blob/master/reactive-programming/Combine/Combine.md)
 
 ## Testing
-* [Testing](https://github.com/cs4372/ios-study-guide/blob/master/testing/Testing.md)
+* [Snapshot Testing](https://github.com/cs4372/ios-study-guide/blob/master/testing/Snapshot-Testing.md)
+* [Unit Testing](https://github.com/cs4372/ios-study-guide/blob/master/testing/Testing.md)
