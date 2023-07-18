@@ -53,6 +53,7 @@ Study guide on iOS and Swift
 ## How tos
 * [Create an iOS project without storyboards](https://github.com/cs4372/ios-study-guide/blob/master/how-tos/remove-storyboard.md)
 * [Import and configure vector graphics](https://github.com/cs4372/ios-study-guide/blob/master/how-tos/import-vector-graphics.md)
+* [Add localization to iOS Apps](https://github.com/cs4372/ios-study-guide/blob/master/how-tos/add-localization.md)
 
 ## Data Persistence
 * [Core Data](https://github.com/cs4372/ios-study-guide/blob/master/persistence/CoreData.md)
@@ -61,6 +62,7 @@ Study guide on iOS and Swift
 * [UserDefaults](https://github.com/cs4372/ios-study-guide/blob/master/persistence/UserDefaults.md)
 
 ## Concurrency
+* [Async/Await](https://github.com/cs4372/ios-study-guide/blob/master/concurrency/async-await/Async-await.md)
 * [Threads-Queues-GCD](https://github.com/cs4372/ios-study-guide/blob/master/concurrency/Threads-GCD/Threads-GCD.md)
 
 ## Architectural Patterns
