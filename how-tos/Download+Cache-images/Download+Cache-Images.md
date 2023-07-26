@@ -1,8 +1,8 @@
 ## How to download and cache images
 
-See ... for reference. 
+See sample [project](https://github.com/cs4372/ios-study-guide/tree/master/how-tos/Download%2BCache-images/Download%2BCache-Images/Download%2BCache-Images) for reference. 
 
-Key notes:
+### Key notes:
 
 1. Swift uses URLSession for making network requests and there are two main types of tasks that you can use: download tasks and data tasks.
 
