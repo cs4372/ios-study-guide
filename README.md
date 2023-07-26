@@ -54,6 +54,7 @@ Study guide on iOS and Swift
 * [Create an iOS project without storyboards](https://github.com/cs4372/ios-study-guide/blob/master/how-tos/remove-storyboard.md)
 * [Import and configure vector graphics](https://github.com/cs4372/ios-study-guide/blob/master/how-tos/import-vector-graphics.md)
 * [Add localization to iOS Apps](https://github.com/cs4372/ios-study-guide/blob/master/how-tos/add-localization.md)
+* [How to download and cache images](https://github.com/cs4372/ios-study-guide/blob/master/how-tos/Download%2BCache-images/Download%2BCache-Images.md)
 
 ## Data Persistence
 * [Core Data](https://github.com/cs4372/ios-study-guide/blob/master/persistence/CoreData.md)
