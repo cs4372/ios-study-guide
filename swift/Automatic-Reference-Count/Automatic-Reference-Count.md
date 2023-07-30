@@ -59,6 +59,11 @@ We construct an example of class Person named cat and provide all of the classâ€
 ### weak self vs unowned self (both break strong reference cycles and avoid memory leaks)
 #### weak self
 -  it creates an optional weak reference to the object. The reference can become nil if the object is deallocated, meaning it handles the case where the object might not exist anymore
+
+Example:
+
+You have a view controller and it shows the user profile with their information and images. The closure is used to fetch the user's informaton and whhile the closure is fetching the data, the user might leave the screen and navigate to another screen. What that happens, the VC is not needed anymore as the user is not on the same screen. The closure will continue to fetch the data and this can create a retain cycle where they both hold on tightly, causing memory leaks. Using [weak self] in the closure gently lets go of the view controller when not needed, avoiding memory issues and ensuring a smooth app experience.
+
 #### unowned self
 - are non-optional and assume that the object will always exist when the closure is called. If the object is deallocated before the closure is executed, it can lead to a runtime crash if you try to access the unowned reference
 
@@ -177,3 +182,4 @@ Resources:
 - https://developer.apple.com/videos/play/wwdc2021/10216/
 - [Retain Cycle, Automatic Reference Counting, Memory Leak](https://www.youtube.com/watch?v=VcoZJ88d-vM)
 - https://betterprogramming.pub/a-look-into-automatic-reference-counting-b17e9539d34f
+- https://trycombine.com/posts/self-weak-unowned/

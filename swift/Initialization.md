@@ -67,6 +67,20 @@ init( __ INPUT PARAMETER __ ) {
 }
 ```
 
+```
+class Person {
+    var name: String
+    var age: Int
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}
+
+let dust = Person(name: "Dusty", age: 8)
+```
+
 #### Convenience initializers
 - are secondary, supporting initializers for a class. You can define a convenience initializer to call a designated initializer from the same class as the convenience initializer with some of the designated initializer’s parameters set to default values. You can also define a convenience initializer to create an instance of that class for a specific use case or input value type.
 
@@ -94,6 +108,29 @@ print(cat.name)
 //Output
 Cat
 Dusty
+```
+
+#### Calling Superclass Designated Initializer
+
+```
+class Vehicle {
+    var brand: String
+    
+    init(brand: String) {
+        self.brand = brand
+    }
+}
+
+class Car: Vehicle {
+    var model: String
+    
+    init(brand: String, model: String) {
+        self.model = model
+        super.init(brand: brand) // Calling the designated initializer of the superclass
+    }
+}
+
+let myCar = Car(brand: "Toyota", model: "Camry")
 ```
 
 #### Failable Initializer
