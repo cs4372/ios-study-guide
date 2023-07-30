@@ -8,6 +8,8 @@
 - helps encapsulate your code and hides the implementation details of your code.
 - in Swift 3 and 4, we have `open`, `public`, `internal`, `fileprivate` and `private` (least restrictive to most restrictive) for access control.
 
+  <img src="https://github.com/cs4372/ios-study-guide/blob/master/interview-prep/swift-access-levels.png" height="300"/>
+
 #### Private vs fileprivate
 - private => it can only be accessed within the enclosing type, e.g. a class and its extensions.
 - fileprivate => is accessible anywhere in that file.
