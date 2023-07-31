@@ -180,10 +180,12 @@ task.resume()
 
 ## Escaping Closures
 
-- An escaping closure is a closure that is passed as an argument to a function but is not executed within the function itself. Instead, it can be stored or used outside of the function's scope.
-- When a closure is passed to a function as an argument, it is typically executed immediately. However, if the closure is marked as `@escaping`, it means that the closure may be stored or used later on, so the function needs to keep it alive beyond its own execution. This is typically done by storing the closure in a property or passing it to another function that will execute it later.
+- An escaping closure is a closure that outlives the function it is passed to.
+This means the closure can be executed after the function that received it has finished its execution, possibly when the calling scope has already returned.
+- Escaping closures are typically used when you need to perform some asynchronous operation or store the closure for later execution.
+- For example, if you pass a closure as a completion handler to a network request function and that closure is executed after the network request completes, it needs to be marked as escaping.
 - By marking the closure as `@escaping`, the function ensures that the closure is not deallocated when it returns, and can be executed later when the asynchronous operation completes.
--  In summary, the @escaping attribute is required to ensure that the closure is still available for execution when the delayed block / function executes because it allows the closure to outlive the function that it's passed into and be captured and executed by the delayed block.
+-  In summary, the `@escaping` attribute is required to ensure that the closure is still available for execution when the delayed block / function executes because it allows the closure to outlive the function that it's passed into and be captured and executed by the delayed block.
 
 ## Examples
 

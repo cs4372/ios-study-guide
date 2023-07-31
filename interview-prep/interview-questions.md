@@ -51,6 +51,48 @@ if let constantName = someOptional {
 #### What is `Intialization` in swift?
 - Process of preparing an instance of a class, struct, or enum for use by setting its initial state and allocating memory.
 
+#### Escaping closure and a non-escaping closure
+- An escaping closure can outlive the function it is passed to and is commonly used for asynchronous operations or when you need to store the closure for later execution. 
+- A non-escaping closure is executed within the function's context and doesn't outlive the function. It's more efficient and typically used for synchronous operations or immediate execution within the function.
+- Swift uses non-escaping closures by default – they remove a small performance hit caused by Swift needing to keep escaping closures alive in memory after the function finishes.
+
+#### Explain Enum and associated value?
+- Enum is a special data type that allows you to define a group of related values and come in handy when you have a lot of different options you want to encode.
+```
+enum Direction {
+    case up
+    case down
+    case left
+    case right
+}
+```
+- Associated values in enums allow you to associate additional data with each enum case. 
+- This is useful when you want to store additional information related to a specific case.
+```
+enum MercedesModelPrice {
+   case MayBach(price: Int)
+   case AMG_GT(price: Int)
+   case Metris(price: Int)
+   case SprinterWagon(price: Int)
+   case GClass
+}
+```
+
+#### Value type vs Reference type?
+Value type:
+- Values stored directly in memory.
+- Copies are independent of each other.
+- Copies allow safe and independent mutation.
+- Automatic memory management (no retain cycles).
+- E.g. Integers, floats, enums, structs, tuples.
+
+Reference type:
+- References (memory addresses) stored in memory.
+- Copies share the same underlying data.
+- Changes in one reference affect all references.
+- Requires careful memory management to avoid retain cycles and leaks.
+- E.g. Classes, closures.
+
 ## UIKit
 - Questions about building apps with UIKit.
 
@@ -67,3 +109,7 @@ if let constantName = someOptional {
 - When we create a table view, it often contains a large number of cells, and creating a new cell for each row can be inefficient and consume a lot of memory.
 - When a cell goes off-screen, it is saved in a reuse pool and can be reused for new rows with the same identifier, therefore reducing memory usage and enhancing the performance of table views.
 - `Downside` is that Reusing cells can result in incorrect content display, performance overhead (if cells are highly customized / reuse pool becomes excessively large)
+
+## Performance
+- Questions about improving your apps to be faster, more efficient, less crashy, and similar.
+
