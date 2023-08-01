@@ -76,3 +76,7 @@ Study guide on iOS and Swift
 ## Testing
 * [Snapshot Testing](https://github.com/cs4372/ios-study-guide/blob/master/testing/Snapshot-Testing.md)
 * [Unit Testing](https://github.com/cs4372/ios-study-guide/blob/master/testing/Testing.md)
+
+## Interview Prep
+* [Interview Questions](https://github.com/cs4372/ios-study-guide/blob/master/interview-prep/interview-questions.md)
+* [Swift Syntax for Interviews](https://github.com/cs4372/ios-study-guide/blob/master/interview-prep/swift-syntax.md)
