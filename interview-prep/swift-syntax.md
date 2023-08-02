@@ -2,7 +2,7 @@
 
 ### Arrays
 
-#### Create empty array type
+#### Create empty array
 ```
 let intArr = [Int]()
 let fullFormArray = Array<String>()
@@ -28,6 +28,12 @@ let numbers = Array(0...3)
 print(numbers) // => [0, 1, 2, 3]
 ```
 
+#### Simple for loop
+```
+for i in (0 ..< nums.count) { 
+    ...
+}
+```
 #### Loop through an array with item and index
 ```
 let array = ["Apples", "Peaches", "Plums"]

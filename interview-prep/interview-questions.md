@@ -18,6 +18,11 @@
 - Extensions -> add new functionality to an existing class, struct, enum, or protocol. Can only add implementations to existing members and cannot force conformance to protocols.
 - Protocol Extensions -> provide default implementations for methods and properties defined in a protocol. Extend the behavior of existing types that conform to the protocol without modifying their original implementation.
 
+#### What is a protocol?
+- Defines a blueprint of methods and properties that guarantees certain behavior without specifiying 
+the implementation of it 
+- A class/struct/enum that adopts the protocol must implement all the required methods and properties defined in the protocol
+
 #### What does the final keyword do? Why would you want to use it?
 - To prevent a class, method, property, or subscript from being overriden or subclassed, so other classes cannot inherit from it or override its behavior. 
 `Ensuring Immutability` - This feature is useful to enforce immutability and ensure that the behavior of a class remains unchanged and the implementation remains consistent across all subclasses.
@@ -92,6 +97,40 @@ Reference type:
 - Changes in one reference affect all references.
 - Requires careful memory management to avoid retain cycles and leaks.
 - E.g. Classes, closures.
+
+#### == vs ===?
+- == operator checks if the `values` are the same, comparing value types. `"equal to"`
+- === operator checks if the `references` point to the same instances (both point to the same memory address) `"identical to"`
+
+#### as? vs as! (used for type casting)
+- as? (Conditional downcasting) -> Returns an optional value of the type you are trying to downcast to.
+- as! (Forced downcasting) -> Only use when you are sure that the downcast will always succeed, otherwise will result in a runtime error.
+
+#### What's a Typealias?
+- Allows you to provide a new name for an existing data type into your program
+- Do not create new types, simply provide a new name to an existing type
+- Purpose is to make code more readable
+
+E.g.
+```
+class Student {
+
+}
+var students:Array<Student> = [] // without type alias
+typealias Students = Array<Student>
+var students:Students = []
+```
+
+## iOS
+#### viewDidLoad and viewWillAppear?
+viewDidLoad: 
+- Called when controller's view is loaded into memory
+- Gets called only `once` in the initial load
+- Great for initial setup and one-time setup tasks like initializing variables, setting up UI elements, or loading data.
+
+viewWillAppear: 
+- Called just before the view controller's view is about to be added to the view hierarchy and become visible on the screen
+- Called every time the view is about to appear on the screen and when it navigates back and forth between view controllers. e.g. refreshing data or updating UI elements based on the latest state. 
 
 ## UIKit
 - Questions about building apps with UIKit.

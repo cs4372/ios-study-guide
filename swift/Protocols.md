@@ -1,7 +1,7 @@
 ## Protocols
 
 - define a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality
-- can then be adopted by a class, structure, or enumeration to provide an actual implementation of those requirements and it has to confrom to the protocol
+- can then be adopted by a class, structure, or enumeration to provide an actual implementation of those requirements and it has to conform to the protocol
 - similar to an interface in other languages
 
 ### Protocol Syntax

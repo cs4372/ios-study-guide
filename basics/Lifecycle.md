@@ -13,7 +13,7 @@
 - outlets are guaranteed to have a value
 
 `viewWillAppear()`
-- Called right before your view appears 
+- Called right before your view appears
 - Good for hiding/showing fields or any operations that you want to happen `every time` before the view is visible. Because you might be going back and forth between views, this will be called `every time` your view is about to appear on the screen.
 - e.g. in a navigation controller, everytime you go back to the first screen, viewWillAppear will get called
 - set text in text field to empty string
