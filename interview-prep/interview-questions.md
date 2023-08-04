@@ -1,8 +1,4 @@
 ## Interview Questions
-- [Swift Language](#swift)
-- [iOS](#ios)
-- [UIKit](#uikit)
-- [Performance](#performance)
 
 ## Swift
 - Questions about the Swift language itself.
@@ -135,6 +131,13 @@ viewDidLoad:
 viewWillAppear: 
 - Called just before the view controller's view is about to be added to the view hierarchy and become visible on the screen
 - Called every time the view is about to appear on the screen and when it navigates back and forth between view controllers. e.g. refreshing data or updating UI elements based on the latest state. 
+
+#### How would you round the corners of one of your views?
+- Set the corner radius to round the corners
+```
+view.layer.cornerRadius = 20
+```
+Set `view.clipsToBounds` to true to ensure that any subviews inside view are clipped to its rounded bounds.
 
 ## UIKit
 - Questions about building apps with UIKit.

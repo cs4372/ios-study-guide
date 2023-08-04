@@ -9,6 +9,15 @@ let fullFormArray = Array<String>()
 let shortFormArray = [String]()
 ```
 
+#### Count frequency of each unique element in the array
+
+```
+var freqMap = [Int: Int]()
+for num in nums { 
+    freqMap[num, default: 0] += 1
+}
+```
+
 #### Creating an array with values
 
 ```
