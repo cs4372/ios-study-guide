@@ -3,7 +3,7 @@
 - [Swift Language](#swift)
 - [iOS](#ios)
 - [UIKit](#uikit)
-- [Design patterns](#designpatern)
+- [Design patterns](#design-patterns)
 - [Data](#data)
 - [Performance](#performance)
 
@@ -164,6 +164,7 @@ Set `view.clipsToBounds` to true to ensure that any subviews inside view are cli
 - `Downside` is that Reusing cells can result in incorrect content display, performance overhead (if cells are highly customized / reuse pool becomes excessively large)
 
 ## Design patterns
+Questions about design patterns, code architectures, and other programming approaches.
 
 #### What is delegation?
 - Design pattern that hands off / delegates some of its responsibilities to an instance of another class to perform some tasks, while the first class retains control over the process
