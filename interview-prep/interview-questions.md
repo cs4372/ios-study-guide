@@ -3,6 +3,8 @@
 - [Swift Language](#swift)
 - [iOS](#ios)
 - [UIKit](#uikit)
+- [Design patterns](#designpatern)
+- [Data](#data)
 - [Performance](#performance)
 
 ## Swift
@@ -161,6 +163,53 @@ Set `view.clipsToBounds` to true to ensure that any subviews inside view are cli
 - When a cell goes off-screen, it is saved in a reuse pool and can be reused for new rows with the same identifier, therefore reducing memory usage and enhancing the performance of table views.
 - `Downside` is that Reusing cells can result in incorrect content display, performance overhead (if cells are highly customized / reuse pool becomes excessively large)
 
+## Design patterns
+
+#### What is delegation?
+- Design pattern that hands off / delegates some of its responsibilities to an instance of another class to perform some tasks, while the first class retains control over the process
+- Define a protocol that will encapsulate the responsibilities that we're handing off
+- The first classs needs to adopt the delegate protocol and conform to it by implementing all the methods in the protocol
+- E.g. UITableViewDataSource and UITableViewDelegate are protocols used in conjunction with `UITableView`
+
+## Data
+
+#### How is a dictionary different from an array?
+Array -> Ordered collection of elements that can be accessed using the index of each element
+      - Insertion and deletion is slower O(N) than dictionary O(1)
+Dictionary -> key-value pairs. Values can be accessed based on their unique keys
+
 ## Performance
 - Questions about improving your apps to be faster, more efficient, less crashy, and similar.
 
+#### How would you identify and resolve a retain cycle?
+- Discuss what retain cycles and memory leaks are
+- Memory leak in iOS is when an amount of allocated space in memory cannot be deallocated due to retain cycles. 
+- Swift uses Automatic Reference Counting(ARC), a retain cycle occurs when 2 or more objects hold strong references to each other. Therefore, these objects retain each other in memory because their retain count would never decrement to 0, which would prevent memory frmo being freed
+-  Discuss effects of memory leaks. OOM (out of memory) crash, lead to unpredicable crashes/behavior
+  
+Identify: 
+2 main ways to detect memory leaks:
+1. Using the Xcode Memory Graph tool. Take a snapshot of the current state of the app. Visualize object references and check if any retain cycles exist.
+2. Use Instruments, like the "Leaks" instruments, to profile your app's memory usage and find memory leaks. Look for objects that are not getting deallocated when they should.
+
+Resolve:
+1. Use weak or unowned references to break the retain cycle. A weak reference allows the referenced object to be deallocated, and the reference becomes nil if the object is deallocated. 
+
+
+#### What is an efficient way to cache data in memory?
+- Caching data in memory improves the performance and responsiveness of an iOS app by reducing the need to fetch data from remote resources repeatedly.
+  1. NSCache 
+   - Built-in class in iOS that provides an efficent way to cache data in memory.
+   - Automatically manages memory by purging least-recently-used items when memory is low
+  2. NSUserDefaults.
+   - Cache small amounts of data, such as user preferences, settings.
+   - **Avoid using it for large or frequently updated data as it's not designed for high-performance caching.
+  3. Dictionaries/Arrays
+  4. Third-party Libraries (HanekeSwift, AlamofireImage)
+  
+#### What steps do you take to identify and resolve battery life issues?
+1. Minimize unnecessary network requests and background activity when user isn't interacting with the app
+2. Optimize image and asset sizes to reduce memory usage.
+3. Optimize networking techniques, such as HTTP caching and compression.
+4. Avoid memory leaks and excessive memory usage through proper memory management.
+5. Use Xcode's Instruments tool to profile the app's power consumption and identify areas of excessive battery usage.
