@@ -77,6 +77,35 @@ let fullFormDictionary = Dictionary<String, Int>()
 let shortFormDictionary = [String: Int]()
 ```
 
+### Strings
+#### Get first and last character in the string (great for loops)
+```
+let s = "Hello"
+let first = s.startIndex
+let end = s.endIndex
+let firstChar = s[first]
+let lastChar = s[end]
+```
+
+#### Get the next index after the current index
+```
+let nextIndex = s.index(after: startIndex) 
+```
+
+#### Get substring 
+```
+s[i..<j]
+```
+
+#### Returns an index that is the specified distance from the given index
+```
+let numbers = [10, 20, 30, 40, 50]
+let i = numbers.index(numbers.startIndex, offsetBy: 4)
+print(numbers[i])
+// Prints "50"
+Complexity: O(1)
+```
+
 ### Others
 #### Get type of value
 ```
