@@ -10,6 +10,14 @@
 ## Swift
 - Questions about the Swift language itself.
 
+#### Features of Swift
+- `Statically-typed language` -> The variable's type is determined during compile time. This helps catch type-related errors early in the development process, ensuring more reliable code.
+- `Object-oriented programming language` -> Supports the concept of classes and objects.
+- `Encourages protocol-oriented programming language` - Promotes code reuse and composition through protocols for building extensible code.
+- `Automatic Reference Counting (ARC)` -> To manage memory automatically and get rid of them when they are no longer in use.
+- `Supports Closures` -> To make it easier to write and user high-order functions 
+- `Optionals` - Allows developers to handle the absence of a value in a safe manner. This prevents unexpected crashes due to nil values and promotes better error handling.
+
 #### Define Access Control
 - Restricts access to parts of your code such as classes, methods, properties from the code in other source files and modules.
 - Helps encapsulate your code and hides the implementation details of your code.
@@ -171,6 +179,27 @@ Questions about design patterns, code architectures, and other programming appro
 - Define a protocol that will encapsulate the responsibilities that we're handing off
 - The first classs needs to adopt the delegate protocol and conform to it by implementing all the methods in the protocol
 - E.g. UITableViewDataSource and UITableViewDelegate are protocols used in conjunction with `UITableView`
+
+#### What is MVC?
+- Architectural pattern made up of 3 main components:
+1. Model => Handles how data is stored and it's usually a class or struct
+2. View => Represents UI and responsible for presenting data to the user.
+3. Controller => Mediator between model and view and holds the business logic. Responsible for updating the model and the view.
+- View controllers can get bulky and there's where MVVM comes into place.
+
+#### What is MVVM?
+- Architectural pattern:
+1. Model => Handles how data is stored and it's usually a class or struct.
+2. View / Controller => Represents UI and responsible for presenting data to the user.
+3. View Model => Receives UI events and perform business logic, transforming it into values that can be displayed on the UI
+
+Why MVVM?
+1. Clear separation of concerns between View, ViewModel and Model, providing us with a more modularized code structure
+2. Avoid Bulky Controllers
+- In MVC, as our app grows, controllers can become bloated and difficult to maintain. With MVVM, we move the business logic to ViewModel to help us organize and seperate code effectively
+3. Testability
+- ViewModel contains the business logic, which can be easily unit tested without dependencies
+
 
 ## Data
 
