@@ -40,8 +40,8 @@ the implementation of it
 
 #### What does the final keyword do? Why would you want to use it?
 - To prevent a class, method, property, or subscript from being overriden or subclassed, so other classes cannot inherit from it or override its behavior. 
-`Ensuring Immutability` - This feature is useful to enforce immutability and ensure that the behavior of a class remains unchanged and the implementation remains consistent across all subclasses.
-`Improving Code Safety` - Codebase with fewer points of modifications so reduce the risk of introducing unexpected behavior when making changes.
+- `Ensuring Immutability` -> This feature is useful to enforce immutability and ensure that the behavior of a class remains unchanged and the implementation remains consistent across all subclasses.
+- `Improving Code Safety` -> Codebase with fewer points of modifications so reduce the risk of introducing unexpected behavior when making changes.
 
 #### [weak self] vs [unowned self]
 - Both used to avoid retain cycles
@@ -51,7 +51,7 @@ the implementation of it
  `Always use [weak self] if there's a possibility of the closure outliving the captured object.`
 
 #### Property observers
-- allow us to observe and response to changes in a property's value
+- allow us to observe and respond to changes in a property's value
 - 2 types of property observers:`willSet` and `didSet`
 - `willSet` is called before the valueof the property is about to be changed and `didSet` is called immediately after the value of the property has been changed
 - Common usecase: updating UI elements when a property changes. E.g. if you have a score property that holds an integer, you might attach a didSet observer so that it updates a label whenever the score changes.
