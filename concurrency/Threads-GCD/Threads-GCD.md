@@ -11,6 +11,8 @@
 - Parallel tasks are split into subtasks that are assigned to multiple workers and then completed simultaneously.
 - Not as efficient as many workers are used to accomplish 1 task
 
+“Concurrency is about dealing with many things at once, parallelism is about doing many things at once. Concurrency is a way to structure things so you can maybe use parallelism to do a better job.” - Rob Pike
+
 ### Process
 - A process represents an individual running application
 - Has at least 1 thread 
@@ -22,9 +24,14 @@
 - Multiple threads can exist within a single process, each running concurrently and performing different tasks
 - Threads share the same memory space within a process, allowing them to access and modify shared data
 
-Every iOS application has a main thread, which is to display your user interface and listen for events. 
+In iOS, threads are categorized into two as below:
+Main thread, which is to display your user interface and listen for events.
+Background thread, which mostly works with long running tasks such as network request, db queries.
 
-Complex computations may slow down the main thread and freeze the app, hence it is where multithreading comes into play. We have to move all the heavy lifting to a background thread, and then move the result back to the main.
+Complex computations may slow down the main thread and freeze the app, hence it is where `multithreading` comes into play. We have to move all the heavy lifting to a background thread, and then move the result back to the main.
+
+### Race Condition
+- Happens when mulitple threads are trying to access the same shared resources.
 
 ### Queues 
 
@@ -34,7 +41,7 @@ A queue is just a bunch of code blocks, queued up waiting for a thread to execut
 
 ### Grand Central Dispatch (GCD)
 
-- The API responsible for managing your queues in the First-in First-out order
+- The API responsible for managing your queues in the First-in First-out order and to handle concurrent operations.
 
 Responsibility:
 - Create a queue 
@@ -80,6 +87,39 @@ Pros:
 - used for performing UI-related tasks, such as updating UI elements or interacting with UI frameworks
 - Place response from API request, db queries
 
+E.g.
+
+```
+func configure(with name: String, url: URL?) {
+    // Configure Name Label
+    nameLabel.text = name
+
+    // Load Image
+    if let url = url {
+        DispatchQueue.global(qos: .background).async {
+            if let data = try? Data(contentsOf: url) {
+                let image = UIImage(data: data)
+
+                DispatchQueue.main.async {
+                    self.thumbnailImageView.image = image
+                }
+            }
+        }
+    }
+}
+```
+
+```
+let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+   if let data = data {
+      DispatchQueue.main.async { // On main thread to update UIKit class i.e UILabel
+         self.label.text = "\(data.count) bytes downloaded"
+      }
+   }
+}
+task.resume()
+```
+
 #### Background Queues(DispatchQueue.global)
 - Working with long running tasks such as network request, db queries
 - can offload these tasks to a global background queue, allowing them to run concurrently and asynchronously without blocking the main thread. This helps to maintain a responsive UI and prevent the app from freezing or becoming unresponsive while waiting for the network or database operations to complete
@@ -117,6 +157,7 @@ If you don't specific a QoS, then it will be set to default
 #### Synchronous
 - The program waits until execution finishes before the method call returns. It will block the user from doing anything until it is executed 
 - Blocks the main thread until closure execution is completed
+- Only use if necessary
 
 ```
 DispatchQueue.main.sync { 
