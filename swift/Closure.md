@@ -1,8 +1,9 @@
 ## Closure
 
-- self-contained blocks of code that can be passed around and used in your code
-- can capture and store references to any constants and variables from the context in which they're defined => known as closing over those constants and variables
-- Swift handles all of the memory management of capturing 
+- self-contained blocks of code that can be passed around and used in your code.
+- can capture values and constants from the enclosing scope -> allows functions and closures to retain and use variables and constants defined in their surrounding context, even after that context has exited.
+- Swift handles all of the memory management of capturing
+- *Note*: Functions can capture values within the enclosing scope too but closures offer a more concise syntax and its primary focus is to capture context.
 
 Functions are a type of closures. There are 3 closures:
 - global functions -> have a name and cannot capture any values
@@ -125,18 +126,23 @@ var multipleParametersAndReturnValue =
 - closure that can capture values is a nested function, written within the body of another function
 - A nested function can capture any of its outer function's arguments and can also capture any constants and variables defined within the outer function
 
-E.g. The following function called  `makeIncrementer` contains a nested function called `incrementer`. `Incrementer` captures 2 values, `runningTotal` and `amount` from its surrounding context.
+E.g. The following function called  `makeIncrementer` contains a closure called `incrementer`. `Incrementer` captures 2 values, `runningTotal` and `amount` from its surrounding context (body of the makeIncrementer function).
 - After capturing these values, incrementer is returned by makeIncrementer as a closure that increments runningTotal by amount each time it’s called.
+- When you create an instance of the incrementer closure using makeIncrementer(amount: 2), it captures the amount you provided (2 in this case) and starts incrementing the total by 2 each time it's called.
 
 ```
-func makeIncrementer(forIncrement amount: Int) -> () -> Int {
+func makeIncrementer(amount: Int) -> () -> Int {
     var runningTotal = 0
-    func incrementer() -> Int {
+    let incrementer: () -> Int = {
         runningTotal += amount
         return runningTotal
     }
     return incrementer
 }
+
+let incrementByTwo = makeIncrementer(amount: 2)
+print(incrementByTwo())  // Output: 2
+print(incrementByTwo())  // Output: 4
 ```
 
 ### Use of Closures
@@ -230,6 +236,7 @@ typealias DownloadCompletion = (DownloadResult) -> ()
 ```
 
 #### Perform a network requst
+- One place is in completion handlers when downloading data/images. Completion handlers are closures. The closure isn’t called immediately. So after we’re done downloading successfullly, then we call the closure to handle the data that we got.
 
 ```
 func fetchData(_ completion: @escaping (_ success: Bool, _ data: Data?) -> Void) {
