@@ -133,11 +133,11 @@ E.g. The following function called  `makeIncrementer` contains a closure called 
 ```
 func makeIncrementer(amount: Int) -> () -> Int {
     var runningTotal = 0
-    let incrementer: () -> Int = {
+    func increment() -> Int { 
         runningTotal += amount
         return runningTotal
     }
-    return incrementer
+    return increment
 }
 
 let incrementByTwo = makeIncrementer(amount: 2)
@@ -273,6 +273,28 @@ self.fetchData { success, data in
 
 - If we don't mark the closure as @escaping, it means that the closure should be used immediately, right where it is defined, before we even get the data from the network request
 - When we make a network request to fetch data, it takes some time for the data to arrive. So, marking the closure as @escaping ensures that it waits patiently for the data to arrive before running, allowing us to handle the fetched data correctly in our program
+
+
+#### Delay example
+- The delayedPrint function finishes executing as soon as it schedules the closure to be executed after the specified delay. The function itself doesn't wait for the delay to complete or for the closure to execute.
+- Using escaping closure in this example is necessary to handle the scenario where the closure is executed after the function call has completed.
+
+```
+func delayedPrint(message: String, after seconds: Double, completion: () -> Void) {
+    print("Waiting for \(seconds) seconds...")
+    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+        print(message)
+        completion()
+    }
+}
+
+// This will result in a compilation error
+delayedPrint(message: "Delayed message", after: 3.0) {
+    print("Closure executed after delay")
+}
+
+print("Function call completed")
+```
 
 
 Resources:
