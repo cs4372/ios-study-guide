@@ -40,8 +40,8 @@ A queue is just a bunch of code blocks, queued up waiting for a thread to execut
 ###  2 ways to achieve concurrency: Grand Central Dispatch and OperationQueue
 
 ### Grand Central Dispatch (GCD)
-
-- The API responsible for managing your queues in the First-in First-out order and to handle concurrent operations.
+- low-level framework that provides a set of APIs for managing concurrent tasks on multiple threads
+- Manage your queues in the First-in First-out order and handle concurrent operations.
 
 Responsibility:
 - Create a queue 
@@ -53,9 +53,10 @@ Responsibility:
     Blocks of code waiting in a queue are held in a closure
 }
 
-### Different Queues
+### 2 types of dispatch queues: serial and concurrent
 
 #### Main Queue (Serial)
+- Execute one task at a time
 - Tasks come in in order, everything happens 1 at a time, in order
 
 Task 4 -> Task 3 -> Task2 -> Task 1
@@ -71,6 +72,7 @@ Cons:
 - Slower 
 
 #### Background Queues (Concurrent)
+- Execute multiple tasks simultaneously
 - Everything still starts in order but Task 2 doesn't have to wait until Task 1 to start
 - Order of completion is unpredictable as Task 4 can finish sooner than Task 2
 - Uses to queue up any long-lived, non UI tasks
@@ -151,6 +153,31 @@ If you don't specific a QoS, then it will be set to default
 - lowest priority of all task 
 - Assign this class to asks or dispatch queues that you use to perform work while your app is running in the background 
 - E.g. Maintenance tasks or cleanup
+
+### OperationQueue
+- High-level abstraction that builds on top of GCD (to focus less on details of how concurrent execution will be done and more on the implementation of our business logic)
+- Provides a class called Operation, which represents a unit of work that can be executed asynchronously.
+- Think of an OperationQueue as a line of tasks waiting to be executed. Unlike dispatch queues in GCD, operation queues are not FIFO (first-in-first-out). Instead, they execute tasks as soon as they are ready to be executed, as long as there are enough system resources to allow for it.
+- More customization, you can set the max number of concurrent operations within the queue, add dependencies between tasks, etc
+
+```
+let blockOperation = BlockOperation {
+    print("Executing!")
+}
+
+let queue = OperationQueue()
+queue.addOperation(blockOperation)
+
+queue.addOperation {
+  print("Executing!")
+}
+```
+
+Usecases:
+GCD -> Dealing with simple concurrent tasks and you want a more lightweight and efficient approach.
+OperationQueue -> Dealing with more complex workflows, dependencies between tasks, and a need for customization and observability.
+
+[OperationQueue Explained](https://holyswift.app/operationqueues-in-swift-more-control-to-your-async-operations-with-asynchronous-dependency-graph/)
 
 ### Threads can be used for both asynchronous and synchronous execution.
 
