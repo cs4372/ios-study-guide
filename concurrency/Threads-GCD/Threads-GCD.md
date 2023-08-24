@@ -301,6 +301,13 @@ print("Continue Execution")
 - Attempting to synchronously execute a work item on the main queue results in deadlock
 - Do not update UI from a background thread
 
+Questions:
+#### Why long-running tasks shouldn’t be done on the main thread?
+- Main thread is responsible for handling user interface updates and interactions.
+- Is precious resource that should be reserved for UI-related tasks that require quick response times. 
+- If a long-running task is executed on the main thread, it blocks the thread and prevents the UI from responding to user interactions or updating its appearance. This can lead to a frozen or unresponsive UI, creating a poor user experience. 
+- Also can lead to Thread Starvation, where the thread becomes busy with a single task and is unable to perform other critical tasks.
+
 Resources:
 - [Concurrent vs Parallel Tasks for a Worker System](https://blog.iron.io/concurrent-vs-parallel-tasks-for-a-worker-system/)
 - [Threads and Group Central Dispatch](https://www.youtube.com/watch?v=uRLcV2Rvheg)
