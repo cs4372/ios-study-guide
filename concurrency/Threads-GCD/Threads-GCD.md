@@ -301,7 +301,7 @@ print("Continue Execution")
 - Attempting to synchronously execute a work item on the main queue results in deadlock
 - Do not update UI from a background thread
 
-Questions:
+### Questions:
 #### Why long-running tasks shouldn’t be done on the main thread?
 - Main thread is responsible for handling user interface updates and interactions.
 - Is precious resource that should be reserved for UI-related tasks that require quick response times. 
