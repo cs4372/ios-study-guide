@@ -137,6 +137,19 @@ var students:Students = []
 ```
 
 ## iOS
+#### AppDelegate vs SceneDelegate
+- Both classes manage the lifecycle and behavior of the app.
+- The main difference is that Scene delegates allows for multiple scenes for the app.
+### AppDelegate
+- Entry point for the app. Manages app-level lifecycle events and app-wide configurations. - E.g. launching the app, responding to background tasks, managing app's root view controller and window, setting up the app's initial state and configuration, and handling notifications.
+
+### SceneDelegate
+- Manages scene-level lifecycle events and scene-specific user interface setup.
+- Introduced in iOS 13 to support multi-scene architecture.
+- App can have multiple scenes, each with its own user interface and lifecycle.
+- E.g. in an iPad app, each split view pane can be considered a separate scene.
+- Responsibilities include managing user interface of individual scenes, responding to events specific to each scene's lifecycle, handling interactions between different scenes, etc
+
 #### viewDidLoad and viewWillAppear?
 viewDidLoad: 
 - Called when controller's view is loaded into memory
