@@ -5,6 +5,7 @@
 - [UIKit](#uikit)
 - [Design patterns](#design-patterns)
 - [Data](#data)
+- [Frameworks](#frameworks)
 - [Performance](#performance)
 - [Accessibility](#accessibility)
 
@@ -229,6 +230,26 @@ Main Differences:
 - Classes are reference type and Structs are value type objects
 - Classs allow inheritance and structs don't
 - Struct does not have inheritance and does not need to have init()
+
+## Frameworks
+- Questions about Apple frameworks and APIs beyond UIKit and SwiftUI.
+
+#### How does CloudKit differ from Core Data?
+- Both frameworks provided by Apple for managing data
+Main difference is that CloudKit is focused on cloud-based data storage and synchronization across devices, while Core Data is designed for on-device data storage and management.
+
+#### CloudKit
+- Primarily designed for cloud-based data storage and synchronization. It allows you to store and manage structured data on Apple's iCloud servers, making it accessible to users across their devices.
+- CloudKit is managed on Apple's servers, so that the data is stored remotely, and your app communicates with the CloudKit servers to read and write data.
+- Provides built-in authentication and access controls. You can set permissions to control who can read and write data. Users sign in with their Apple IDs to access their data.
+- Offers both public and private databases. Public databases allow you to share data publicly, while private databases are for user-specific data.
+- Supports subscriptions, allowing your app to be notified when specific changes occur to data. This is useful for keeping data synchronized across devices.
+
+#### CoreData
+- Local data storage framework that allows you to create, read, update, and delete data on a device. It's used for managing persistent data within an app's storage.
+- Core Data is managed on the device. It provides a local database where you can store structured data, and it's particularly useful for apps that require offline access to data.
+- Doesn't handle synchronization out of the box.
+- Provides local caching of data on the device, making it efficient for frequently accessed data.
 
 ## Performance
 - Questions about improving your apps to be faster, more efficient, less crashy, and similar.
