@@ -16,7 +16,7 @@ Reasons for using it: Maintaining state between sessions, models the object laye
 
 #### Setup:
 
-1. Check the CoreData checkbox when you first create a project. It will allow Swift to create the boilerplate Core Data Stack code at the bottom of AppDelegate file. The code sets up the persistentContainer and save the data if there are any changes. 
+1. Check the CoreData checkbox when you first create a project. It will allow Swift to create the boilerplate Core Data Stack code at the bottom of AppDelegate file. The code sets up the `persistentContainer` and save the data if there are any changes. 
 
 2. Once project is created, click on the newly created core data file. Add Entity at the bottom, and add attributes associates to the entity. This will translate directly to a swift class. E.g. If we create a Person Entity and add attributes like age and name, then it will be similar to creating a Person class with properties like age and name. This will contain the entity maps/models of what we want to represent our data in the project. 
    
@@ -27,6 +27,19 @@ Start with `import CoreData` in ViewController.swift
 #### Core Data diagram:
 
 <img src="https://github.com/cs4372/ios-study-guide/blob/master/basics/CoreData/core-data.png"/>
+
+#### What Is a Persistent Container?
+- The NSPersistentContainer object encapsulates the majority of Core Data Stack components in the application. It consists of a set of objects that facilitate saving and retrieving data.
+The components include:
+1. Managed Object Model (NSManagedObjectModel):
+   - The managed object model defines the structure of your Core Data entities, attributes, relationship, and more.
+   - E.g. In a task management app, the managed object model might include an entity called "Task", with attributes like "title", "dueDate", and "isCompleted".
+2. Persistent Store Coordinator (NSPersistentStoreCoordinator):
+   - Responsible for managing the actual storage of data on disk. It coordinates interactions between the managed object model and the underlying persistent stores, which can be SQLite databases, binary files, or in-memory stores, ensuring that data is properly saved, retrieved and updated in response to the application's interactions.
+   - E.g. In a task management app, the persistent store coordinator would handle storing and retrieving the user's tasks in a database file on the device.
+3. Managed Object Context (NSManagedObjectContext):
+   - Managed object context is where you create, modify, and retrieve managed objects.
+   - E.g. In a task management app, the managed object context would manage the creation, modification, and retrieval of task entries. You could create a new task, edit its details, and then save those changes to the persistent store.
 
 ### Create Records to Core Data
 - Refer to persistentContainer from appDelegate
