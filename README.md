@@ -67,10 +67,11 @@ Study guide on iOS and Swift
 * [Async/Await](https://github.com/cs4372/ios-study-guide/blob/master/concurrency/async-await/Async-await.md)
 * [Threads-Queues-GCD](https://github.com/cs4372/ios-study-guide/blob/master/concurrency/Threads-GCD/Threads-GCD.md)
 
-## Architectural Patterns
+## Design Patterns
 * [MVC](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVC.md)
 * [MVVM](https://github.com/cs4372/ios-study-guide/blob/master/architecture/MVVM/MVVM.md)
-
+* [Dependency Injection](https://github.com/cs4372/ios-study-guide/blob/master/architecture/DependencyInjection.md)
+ 
 ## Reactive Programming
 * [Combine](https://github.com/cs4372/ios-study-guide/blob/master/reactive-programming/Combine/Combine.md)
 
