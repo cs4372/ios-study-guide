@@ -41,6 +41,8 @@ The components include:
    - Managed object context is where you create, modify, and retrieve managed objects.
    - E.g. In a task management app, the managed object context would manage the creation, modification, and retrieval of task entries. You could create a new task, edit its details, and then save those changes to the persistent store.
 
+<img src="https://github.com/cs4372/ios-study-guide/blob/master/persistence/CoreDataStack.png"/>
+
 ### Create Records to Core Data
 - Refer to persistentContainer from appDelegate
 - Create the context from persistentContainer
