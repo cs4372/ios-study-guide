@@ -6,6 +6,7 @@
 - [Design patterns](#design-patterns)
 - [Data](#data)
 - [Performance](#performance)
+- [Accessibility](#accessibility)
 
 ## Swift
 - Questions about the Swift language itself.
@@ -223,6 +224,12 @@ Array -> Ordered collection of elements that can be accessed using the index of 
       - Insertion and deletion is slower O(N) than dictionary O(1)
 Dictionary -> key-value pairs. Values can be accessed based on their unique keys
 
+#### Classes vs Structs
+Main Differences:
+- Classes are reference type and Structs are value type objects
+- Classs allow inheritance and structs don't
+- Struct does not have inheritance and does not need to have init()
+
 ## Performance
 - Questions about improving your apps to be faster, more efficient, less crashy, and similar.
 
@@ -258,3 +265,23 @@ Resolve:
 3. Optimize networking techniques, such as HTTP caching and compression.
 4. Avoid memory leaks and excessive memory usage through proper memory management.
 5. Use Xcode's Instruments tool to profile the app's power consumption and identify areas of excessive battery usage.
+
+## Accessibility
+
+#### Name a few accessibility features in iOS?
+1. VoiceOver
+   - Screen-reading tool, which helps users interact with software without needing to see the screen. It’s specifically designed for people with vision problems.
+   -  responds to gestures and audibly communicates to the user what’s on the screen or what the user selects.
+2. VoiceControl
+   - fully control your iPhone and interact with apps using only your voice. Designed for visually-impared people.
+3. "Hearing Aids" feature
+   - Leverages Bluetooth technology to provide a more customized and accessible audio experience for individuals with hearing impairments.
+4. Text Size and Font Adjustability
+   - Provides the ability to adjust text size and supporting Dynamic Type for users with visual impairments.
+5. Color Contrast and Visual Legibility
+   - App designs should consider color contrast to ensure readability for individuals with low vision or color blindness.
+6. Alternative Text for Images
+   - Images should have appropriate alternative text (alt text) assigned to them. This allows screen readers to convey the meaning and context of images to visually impaired users.
+
+#### What is Dynamic Type?
+- Dynamic Type is a way of allowing the user to adjust their preferred size for all fonts in all apps. SwiftUI defaults to using it across the board.
