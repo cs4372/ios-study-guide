@@ -57,7 +57,9 @@ the implementation of it
 - Common usecase: updating UI elements when a property changes. E.g. if you have a score property that holds an integer, you might attach a didSet observer so that it updates a label whenever the score changes.
 
 #### If let vs guard let?
-- Both check and unwrap optionals, but `guard` provides an early exit if its check fails and variables `guard` unwraps stay in scope after the `guard` block
+- Both check and unwrap optionals, but `guard` provides an early exit if its check fail.
+- `if let` -> suitable for scenarios where you want to continue execution even if the optional value is nil.
+- `guard let` -> useful for early exits and avoiding nested indentation.
 - Unwrapped variables in `if let` are only available within the scope of the `if` block.
 
 #### Optional binding
