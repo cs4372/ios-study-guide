@@ -140,6 +140,10 @@ typealias Students = Array<Student>
 var students:Students = []
 ```
 
+#### What's lazy var?
+- A property that is computed only when it is first accessed. It allows you to defer the initialization of a property until it's actually needed, which can be useful for improving performance and memory usage.
+- Use lazy var when you have properties that might not always be used and their computation is expensive.
+
 ## iOS
 #### AppDelegate vs SceneDelegate
 - Both classes manage the lifecycle and behavior of the app.
@@ -221,8 +225,9 @@ Why MVVM?
 ## Data
 
 #### How is a dictionary different from an array?
-Array -> Ordered collection of elements that can be accessed using the index of each element
-      - Insertion and deletion is slower O(N) than dictionary O(1)
+Array:
+- Ordered collection of elements that can be accessed using the index of each element
+- Insertion and deletion is slower O(N) than dictionary O(1)
 Dictionary -> key-value pairs. Values can be accessed based on their unique keys
 
 #### Classes vs Structs
@@ -236,7 +241,7 @@ Main Differences:
 
 #### How does CloudKit differ from Core Data?
 - Both frameworks provided by Apple for managing data
-Main difference is that CloudKit is focused on cloud-based data storage and synchronization across devices, while Core Data is designed for on-device data storage and management.
+- Main difference is that CloudKit is focused on cloud-based data storage and synchronization across devices, while Core Data is designed for on-device data storage and management.
 
 #### CloudKit
 - Primarily designed for cloud-based data storage and synchronization. It allows you to store and manage structured data on Apple's iCloud servers, making it accessible to users across their devices.
@@ -257,7 +262,7 @@ Main difference is that CloudKit is focused on cloud-based data storage and sync
 #### How would you identify and resolve a retain cycle?
 - Discuss what retain cycles and memory leaks are
 - Memory leak in iOS is when an amount of allocated space in memory cannot be deallocated due to retain cycles. 
-- Swift uses Automatic Reference Counting(ARC), a retain cycle occurs when 2 or more objects hold strong references to each other. Therefore, these objects retain each other in memory because their retain count would never decrement to 0, which would prevent memory frmo being freed
+- Swift uses Automatic Reference Counting(ARC), a retain cycle occurs when 2 or more objects hold strong references to each other. Therefore, these objects retain each other in memory because their retain count would never decrement to 0, which would prevent memory from being freed
 -  Discuss effects of memory leaks. OOM (out of memory) crash, lead to unpredicable crashes/behavior
   
 Identify: 
